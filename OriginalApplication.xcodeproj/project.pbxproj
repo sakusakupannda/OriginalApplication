@@ -14,6 +14,10 @@
 		A445518A2009D565007115CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A44551882009D565007115CC /* LaunchScreen.storyboard */; };
 		A44551952009D565007115CC /* OriginalApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551942009D565007115CC /* OriginalApplicationTests.swift */; };
 		A44551A02009D565007115CC /* OriginalApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445519F2009D565007115CC /* OriginalApplicationUITests.swift */; };
+		A44551AE2009E3CE007115CC /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551AD2009E3CE007115CC /* NotesViewController.swift */; };
+		A44551B02009E3E4007115CC /* AllSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551AF2009E3E4007115CC /* AllSubjectsViewController.swift */; };
+		A44551B22009E3F8007115CC /* EachSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551B12009E3F8007115CC /* EachSubjectViewController.swift */; };
+		A44551B42009E40A007115CC /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551B32009E40A007115CC /* ScoresViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		A445519B2009D565007115CC /* OriginalApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OriginalApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A445519F2009D565007115CC /* OriginalApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalApplicationUITests.swift; sourceTree = "<group>"; };
 		A44551A12009D565007115CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A44551AD2009E3CE007115CC /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		A44551AF2009E3E4007115CC /* AllSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSubjectsViewController.swift; sourceTree = "<group>"; };
+		A44551B12009E3F8007115CC /* EachSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachSubjectViewController.swift; sourceTree = "<group>"; };
+		A44551B32009E40A007115CC /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,10 @@
 			children = (
 				A445517F2009D565007115CC /* AppDelegate.swift */,
 				A44551812009D565007115CC /* ViewController.swift */,
+				A44551AD2009E3CE007115CC /* NotesViewController.swift */,
+				A44551AF2009E3E4007115CC /* AllSubjectsViewController.swift */,
+				A44551B12009E3F8007115CC /* EachSubjectViewController.swift */,
+				A44551B32009E40A007115CC /* ScoresViewController.swift */,
 				A44551832009D565007115CC /* Main.storyboard */,
 				A44551862009D565007115CC /* Assets.xcassets */,
 				A44551882009D565007115CC /* LaunchScreen.storyboard */,
@@ -260,7 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A44551822009D565007115CC /* ViewController.swift in Sources */,
+				A44551B42009E40A007115CC /* ScoresViewController.swift in Sources */,
+				A44551B22009E3F8007115CC /* EachSubjectViewController.swift in Sources */,
+				A44551B02009E3E4007115CC /* AllSubjectsViewController.swift in Sources */,
 				A44551802009D565007115CC /* AppDelegate.swift in Sources */,
+				A44551AE2009E3CE007115CC /* NotesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65SWWN45J8;
 				INFOPLIST_FILE = OriginalApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sakurako.OriginalApplication;
@@ -441,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65SWWN45J8;
 				INFOPLIST_FILE = OriginalApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sakurako.OriginalApplication;
