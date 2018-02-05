@@ -16,18 +16,11 @@ class AllSubjectsViewController: UIViewController {
     @IBOutlet var label3: UILabel!
     @IBOutlet var label4: UILabel!
     @IBOutlet var label5: UILabel!
-    @IBOutlet var label6: UILabel!
     
     let saveData: UserDefaults = UserDefaults.standard
     
-    @IBAction func save1() {
-        saveData.set(label1.text, forKey: "")
-    }
-    @IBAction func save2() {
-        saveData.set(label2.text, forKey: "")
-    }
-    @IBAction func save3() {
-        saveData.set(label3.text, forKey: "")
+    @IBAction func save() {
+        saveData.set(label1.text, forKey: "allnotes")
     }
     
 

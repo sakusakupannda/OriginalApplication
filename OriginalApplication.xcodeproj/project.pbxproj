@@ -18,6 +18,11 @@
 		A44551B02009E3E4007115CC /* AllSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551AF2009E3E4007115CC /* AllSubjectsViewController.swift */; };
 		A44551B22009E3F8007115CC /* EachSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551B12009E3F8007115CC /* EachSubjectViewController.swift */; };
 		A44551B42009E40A007115CC /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551B32009E40A007115CC /* ScoresViewController.swift */; };
+		A44FBFB720220AD300600B33 /* bluegreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = A44FBFB420220AD300600B33 /* bluegreen.gif */; };
+		A44FBFB820220AD300600B33 /* lightblue.gif in Resources */ = {isa = PBXBuildFile; fileRef = A44FBFB520220AD300600B33 /* lightblue.gif */; };
+		A44FBFB920220AD300600B33 /* lightgreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = A44FBFB620220AD300600B33 /* lightgreen.gif */; };
+		A490E88120232F53000B0983 /* ノート.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A490E88020232F53000B0983 /* ノート.jpg */; };
+		A490E883202330D4000B0983 /* lightbluegreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = A490E882202330D4000B0983 /* lightbluegreen.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		A44551AF2009E3E4007115CC /* AllSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSubjectsViewController.swift; sourceTree = "<group>"; };
 		A44551B12009E3F8007115CC /* EachSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachSubjectViewController.swift; sourceTree = "<group>"; };
 		A44551B32009E40A007115CC /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
+		A44FBFB420220AD300600B33 /* bluegreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = bluegreen.gif; path = "../../背景/bluegreen.gif"; sourceTree = "<group>"; };
+		A44FBFB520220AD300600B33 /* lightblue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = lightblue.gif; path = "../../背景/lightblue.gif"; sourceTree = "<group>"; };
+		A44FBFB620220AD300600B33 /* lightgreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = lightgreen.gif; path = "../../背景/lightgreen.gif"; sourceTree = "<group>"; };
+		A490E88020232F53000B0983 /* ノート.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ノート.jpg"; path = "../../背景/ノート.jpg"; sourceTree = "<group>"; };
+		A490E882202330D4000B0983 /* lightbluegreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = lightbluegreen.gif; path = "../../背景/lightbluegreen.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,11 @@
 		A445517E2009D565007115CC /* OriginalApplication */ = {
 			isa = PBXGroup;
 			children = (
+				A490E882202330D4000B0983 /* lightbluegreen.gif */,
+				A490E88020232F53000B0983 /* ノート.jpg */,
+				A44FBFB420220AD300600B33 /* bluegreen.gif */,
+				A44FBFB520220AD300600B33 /* lightblue.gif */,
+				A44FBFB620220AD300600B33 /* lightgreen.gif */,
 				A445517F2009D565007115CC /* AppDelegate.swift */,
 				A44551812009D565007115CC /* ViewController.swift */,
 				A44551AD2009E3CE007115CC /* NotesViewController.swift */,
@@ -245,8 +260,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A445518A2009D565007115CC /* LaunchScreen.storyboard in Resources */,
+				A44FBFB820220AD300600B33 /* lightblue.gif in Resources */,
+				A44FBFB920220AD300600B33 /* lightgreen.gif in Resources */,
 				A44551872009D565007115CC /* Assets.xcassets in Resources */,
+				A490E88120232F53000B0983 /* ノート.jpg in Resources */,
 				A44551852009D565007115CC /* Main.storyboard in Resources */,
+				A44FBFB720220AD300600B33 /* bluegreen.gif in Resources */,
+				A490E883202330D4000B0983 /* lightbluegreen.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,12 +12,14 @@ class EachSubjectViewController: UIViewController {
     
     var recieveValue: String!
     var value: Double!
-    @IBOutlet var label: UILabel!
+    @IBOutlet var label1: UILabel!
+    @IBOutlet var label2: UILabel!
     @IBOutlet var TextField: UITextField!
+    var data = [100, 90]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = recieveValue
+        label1.text = recieveValue
         saveData.object(forKey: "score")
         // Do any additional setup after loading the view.
     }
@@ -39,7 +41,9 @@ class EachSubjectViewController: UIViewController {
     */
     
     @IBAction func save() {
-        saveData.set(TextField.text, forKey: "score")
+        data = saveData.object(forKey: "score") as! [Int]
+        data.append(Int(TextField.text!)!)
+        saveData.set(data, forKey: "score")
     }
     
     
