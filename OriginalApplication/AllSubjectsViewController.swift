@@ -23,6 +23,10 @@ class AllSubjectsViewController: UIViewController {
         saveData.set(label1.text, forKey: "allnotes")
     }
     
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

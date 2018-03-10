@@ -1,3 +1,4 @@
+
 //
 //  EachSubjectViewController.swift
 //  OriginalApplication
@@ -15,7 +16,7 @@ class EachSubjectViewController: UIViewController {
     @IBOutlet var label1: UILabel!
     @IBOutlet var label2: UILabel!
     @IBOutlet var TextField: UITextField!
-    var data = [100, 90]
+    var Subject1 = [100,90]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +42,22 @@ class EachSubjectViewController: UIViewController {
     */
     
     @IBAction func save() {
-        data = saveData.object(forKey: "score") as! [Int]
-        data.append(Int(TextField.text!)!)
-        saveData.set(data, forKey: "score")
+        Subject1 = saveData.object(forKey: "score") as! [Int]
+        Subject1.append (Int(TextField.text!)!)
+        saveData.set(Subject1, forKey: "score")
+    }
+    
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toScores" {let secondViewController: ScoresViewController = segue.destination as! ScoresViewController
-            secondViewController.recieveValue = self.value
-        } else if segue.identifier == "toNotes" {let secondViewController: NotesViewController = segue.destination as! NotesViewController
+        if segue.identifier == "toScores" {
+            let secondViewController: ScoresViewController = segue.destination as! ScoresViewController
+            secondViewController.scoreArray = self.Subject1
+        } else if segue.identifier == "toNotes" {
+            let secondViewController: NotesViewController = segue.destination as! NotesViewController
             secondViewController.recieveValue = self.value
         
         }

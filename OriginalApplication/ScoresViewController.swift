@@ -8,14 +8,23 @@
 
 import UIKit
 
-class ScoresViewController: UIViewController {
+class ScoresViewController: UIViewController, UITableViewDataSource {
     
-    var recieveValue: Double!
+    @IBOutlet var table: UITableView!
+    var scoreArray: [Int]!
+    var saveData: UserDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        table.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.table.reloadData()
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,8 +42,23 @@ class ScoresViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
-    let saveData: UserDefaults = UserDefaults.standard
 
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return scoreArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        cell?.textLabel?.text = String(scoreArray[indexPath.row])
+        
+        self.table.reloadData()
+        return cell!
+    }
+ 
+    
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

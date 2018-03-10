@@ -12,6 +12,9 @@ class NotesViewController: UIViewController {
     
     var recieveValue: Double!
     @IBOutlet var TextView: UITextView!
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
