@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Futura.ttc">
-            <string>Futura-Medium</string>
-        </array>
-        <array key="GujaratiSangamMN.ttc">
-            <string>GujaratiSangamMN-Bold</string>
-        </array>
-        <array key="HiraginoMaruGothProN.ttc">
-            <string>HiraMaruProN-W4</string>
-        </array>
-        <array key="Menlo.ttc">
-            <string>Menlo-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -162,12 +148,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-249" y="90"/>
         </scene>
-        <!--save-->
+        <!--All Subjects View Controller-->
         <scene sceneID="1Us-xf-oG6">
             <objects>
-                <viewController title="save" id="mdy-PG-djJ" customClass="AllSubjectsViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mdy-PG-djJ" customClass="AllSubjectsViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePK-aY-hy6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,15 +187,15 @@
                                 <color key="textColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjX-y8-Oge">
-                                <rect key="frame" x="235" y="245" width="105" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-gA-vGw">
+                                <rect key="frame" x="235" y="180" width="96" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-gA-vGw">
-                                <rect key="frame" x="235" y="180" width="96" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjX-y8-Oge">
+                                <rect key="frame" x="235" y="245" width="105" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -231,7 +217,7 @@
                                     <color key="titleColor" red="0.10939324067237195" green="0.27580796482034231" blue="0.48036960659898476" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="save" destination="mdy-PG-djJ" eventType="touchUpInside" id="f75-nb-FK0"/>
+                                    <action selector="save" destination="mdy-PG-djJ" eventType="touchUpInside" id="1IL-1o-Th6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1S-NQ-uS4">
@@ -255,11 +241,12 @@
                         <viewLayoutGuide key="safeArea" id="zb6-z6-2Ib"/>
                     </view>
                     <connections>
-                        <outlet property="label1" destination="hnf-gA-vGw" id="9d1-W2-cvs"/>
-                        <outlet property="label2" destination="sjX-y8-Oge" id="Fg0-cu-0O9"/>
+                        <outlet property="label1" destination="hnf-gA-vGw" id="yrg-jt-g1k"/>
+                        <outlet property="label2" destination="sjX-y8-Oge" id="dfh-U9-cV7"/>
                         <outlet property="label3" destination="TTh-BT-BEv" id="PfR-69-e2h"/>
                         <outlet property="label4" destination="CT0-Xi-dTM" id="6kA-B3-QKO"/>
                         <outlet property="label5" destination="n1b-D5-U9F" id="gNJ-c3-jie"/>
+                        <outlet property="textView" destination="5Wd-CB-y41" id="pyh-eX-sYo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1W-II-2LJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,14 +266,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xRb-MI-PR5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="3" width="375" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Ycd-yB-uO6">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <items>
-                                        <navigationItem title="Scores" id="Ojr-C5-Hqv"/>
+                                        <navigationItem title="Scores" id="Ojr-C5-Hqv">
+                                            <barButtonItem key="rightBarButtonItem" title="Item" id="1OI-md-Lyg">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Bl-fi-YlN">
+                                                    <rect key="frame" x="276" y="0.5" width="83" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
+                                                    <state key="normal" title="編集"/>
+                                                    <connections>
+                                                        <action selector="button:" destination="5ld-T6-VFJ" eventType="touchUpInside" id="iOj-ls-6Yg"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
+                                        </navigationItem>
                                     </items>
                                 </navigationBar>
                                 <prototypes>
@@ -300,6 +299,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5ld-T6-VFJ" id="WEh-zl-dIC"/>
+                                    <outlet property="delegate" destination="5ld-T6-VFJ" id="31G-yo-D5k"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiK-Qd-W1i">
                                 <rect key="frame" x="16" y="617" width="72" height="30"/>
@@ -317,12 +320,14 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttons" destination="1Bl-fi-YlN" id="aeW-Nq-IXc"/>
                         <outlet property="table" destination="xRb-MI-PR5" id="Tgz-gm-mRv"/>
+                        <outlet property="testTableView" destination="xRb-MI-PR5" id="QwX-IE-ny8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ti-id-c69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2093.5999999999999" y="265.81709145427288"/>
+            <point key="canvasLocation" x="2497" y="90"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="cM6-ni-KcQ">
@@ -385,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKm-fN-JKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2093.5999999999999" y="985.45727136431788"/>
+            <point key="canvasLocation" x="2497" y="853"/>
         </scene>
         <!--Each Subject View Controller-->
         <scene sceneID="TG0-bj-ZXh">
@@ -408,6 +413,7 @@
                                     <color key="titleColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="toScores" destination="xoS-b5-wzC" eventType="touchDown" id="sOy-o2-RGe"/>
                                     <segue destination="5ld-T6-VFJ" kind="presentation" identifier="toScores" id="9iF-7s-Jwy"/>
                                 </connections>
                             </button>

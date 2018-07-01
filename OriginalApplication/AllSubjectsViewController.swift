@@ -16,27 +16,53 @@ class AllSubjectsViewController: UIViewController {
     @IBOutlet var label3: UILabel!
     @IBOutlet var label4: UILabel!
     @IBOutlet var label5: UILabel!
-    
+    @IBOutlet var textView: UITextView!
+    var ScoreArray:[Int] = [0,0]
     let saveData: UserDefaults = UserDefaults.standard
-    
-    @IBAction func save() {
-        saveData.set(label1.text, forKey: "allnotes")
-    }
-    
-    @IBAction func back() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+    var i: Int = 0
+    var number1: Float = 0.0
+    var number2: Int = 0
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        textView.text = saveData.object(forKey: "allnotes") as! String
+        
+        saveData.register(defaults: ["ScoreArray": 0])
+        
+        for i in 1...9 {
+            ScoreArray = saveData.object(forKey: "Subject\(i)scores") as! [Int]
+        }
+        
+        self.average()
     }
+    
+    func average() {
+        number2 = ScoreArray[0] + ScoreArray[1] + ScoreArray[2] + ScoreArray[3]  + ScoreArray[4] + ScoreArray[5] + ScoreArray[6] + ScoreArray[7] + ScoreArray[8]
+        number1 = Float(number2 / 9)
+        label1.text = String(number1)
+        label2.text = String(number2)
+    }
+        
+        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func save() {
+        saveData.set(textView.text, forKey: "allnotes")
+        let alert: UIAlertController = UIAlertController(title: "保存", message: "保存しました", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 

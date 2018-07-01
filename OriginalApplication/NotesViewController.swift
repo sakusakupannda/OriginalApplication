@@ -12,15 +12,15 @@ class NotesViewController: UIViewController {
     
     var recieveValue: Double!
     @IBOutlet var TextView: UITextView!
-    @IBAction func back() {
-        self.dismiss(animated: true, completion: nil)
-    }
-
+    var saveData: UserDefaults = UserDefaults.standard
+    var text: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        TextView.text = saveData.object(forKey: "notes") as? String
 
+        print("\(text)notes")
+        TextView.text = saveData.object(forKey: "\(text)notes") as! String?
+       
         // Do any additional setup after loading the view.
     }
 
@@ -40,10 +40,17 @@ class NotesViewController: UIViewController {
     }
     */
     
-    let saveData: UserDefaults = UserDefaults.standard
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func save() {
-        saveData.set(TextView.text, forKey: "notes")
+        
+            saveData.set(TextView.text, forKey: "\(text)notes")
+            let alert: UIAlertController = UIAlertController(title: "保存", message: "保存しました", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+            present(alert, animated: true, completion: nil)
+        
     }
 
 }

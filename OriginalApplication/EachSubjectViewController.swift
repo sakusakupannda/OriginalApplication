@@ -1,4 +1,3 @@
-
 //
 //  EachSubjectViewController.swift
 //  OriginalApplication
@@ -16,13 +15,14 @@ class EachSubjectViewController: UIViewController {
     @IBOutlet var label1: UILabel!
     @IBOutlet var label2: UILabel!
     @IBOutlet var TextField: UITextField!
-    var Subject1 = [100,90]
+    var ScoreArray: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         label1.text = recieveValue
-        saveData.object(forKey: "score")
+        saveData.register(defaults: ["\(label1.text)score" : []])
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,10 +41,29 @@ class EachSubjectViewController: UIViewController {
     }
     */
     
+    @IBAction func toScores(){
+        performSegue(withIdentifier: "toScores", sender: nil)
+    }
+    
     @IBAction func save() {
-        Subject1 = saveData.object(forKey: "score") as! [Int]
-        Subject1.append (Int(TextField.text!)!)
-        saveData.set(Subject1, forKey: "score")
+        if TextField.text == "" {
+            let alert: UIAlertController = UIAlertController(title: "保存に失敗しました", message: "点数を入れてください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+            present(alert, animated: true, completion: nil)
+        } else if Int(TextField.text!)! > 1000 {
+            let alert: UIAlertController = UIAlertController(title: "保存できませんでした", message: "1000以下の数字を入力してください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+            present(alert, animated: true, completion: nil)
+            TextField.text = ""
+        } else {
+            ScoreArray.append (Int(TextField.text!)!)
+            saveData.set(ScoreArray, forKey: "\(label1.text)scores")
+            TextField.text = ""
+            let alert: UIAlertController = UIAlertController(title: "保存", message: "保存しました", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func back() {
@@ -54,12 +73,13 @@ class EachSubjectViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toScores" {
-            let secondViewController: ScoresViewController = segue.destination as! ScoresViewController
-            secondViewController.scoreArray = self.Subject1
+            let ScoreVC: ScoresViewController = segue.destination as! ScoresViewController
+            ScoreVC.ScoreArray = self.ScoreArray
+            ScoreVC.text = self.label1.text
         } else if segue.identifier == "toNotes" {
-            let secondViewController: NotesViewController = segue.destination as! NotesViewController
-            secondViewController.recieveValue = self.value
-        
+            let NotesVC: NotesViewController = segue.destination as! NotesViewController
+            NotesVC.recieveValue = self.value
+            NotesVC.text = self.label1.text
         }
     }
     
