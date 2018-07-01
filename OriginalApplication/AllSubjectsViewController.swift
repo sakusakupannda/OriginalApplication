@@ -31,14 +31,16 @@ class AllSubjectsViewController: UIViewController {
         
         textView.text = saveData.object(forKey: "allnotes") as! String
         
-        saveData.register(defaults: ["ScoreArray": 0])
-        
-        for i in 1...9 {
-            ScoreArray = saveData.object(forKey: "Subject\(i)scores") as! [Int]
+        if ScoreArray == nil {
+            saveData.register(defaults: ["ScoreArray": 0])
+        } else {
+            for i in 1...9 {
+                ScoreArray = saveData.object(forKey: "Subject\(i)scores") as! [Int]
+            }
+            self.average()
         }
-        
-        self.average()
     }
+
     
     func average() {
         number2 = ScoreArray[0] + ScoreArray[1] + ScoreArray[2] + ScoreArray[3]  + ScoreArray[4] + ScoreArray[5] + ScoreArray[6] + ScoreArray[7] + ScoreArray[8]

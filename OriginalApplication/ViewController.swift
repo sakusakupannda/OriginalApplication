@@ -77,7 +77,6 @@ class ViewController: UIViewController {
             let secondViewController: AllSubjectsViewController = segue.destination as! AllSubjectsViewController
             secondViewController.recieveValue = self.value
         }
-
-
-}
+        
+    }
 }

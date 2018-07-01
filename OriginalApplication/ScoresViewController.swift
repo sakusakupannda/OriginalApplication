@@ -65,7 +65,7 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
         //削除の場合、配列からデータを削除する。
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             ScoreArray.remove(at: indexPath.row)
-             saveData.set(ScoreArray, forKey: "\(text)scores")
+            saveData.set(ScoreArray, forKey: "\(text)scores")
         }
         //テーブルの再読み込み
         tableView.reloadData()
