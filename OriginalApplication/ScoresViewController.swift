@@ -20,10 +20,16 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
  
         // Do any additional setup after loading the view.
-        print("\(text)scores")
+        print("\(text!)scores")
         table.delegate = self
         table.dataSource = self
-        ScoreArray = saveData.object(forKey: "\(text)scores") as! [Int]
+        if ScoreArray == nil {
+            let alert: UIAlertController = UIAlertController(title: "エラー", message: "点数を入れてください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+            present(alert, animated: true, completion: nil)
+        } else {
+            ScoreArray = saveData.object(forKey: "\(text!)scores") as! [Int]
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +71,7 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
         //削除の場合、配列からデータを削除する。
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             ScoreArray.remove(at: indexPath.row)
-            saveData.set(ScoreArray, forKey: "\(text)scores")
+            saveData.set(ScoreArray, forKey: "\(text!)scores")
         }
         //テーブルの再読み込み
         tableView.reloadData()

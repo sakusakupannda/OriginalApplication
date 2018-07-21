@@ -48,7 +48,7 @@ class NotesViewController: UIViewController {
     
     @IBAction func save() {
         
-            saveData.set(TextView.text, forKey: "\(text)notes")
+            saveData.set(TextView.text, forKey: "\(text!)notes")
             let alert: UIAlertController = UIAlertController(title: "保存", message: "保存しました", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)

@@ -21,6 +21,9 @@
 		A44FBFB720220AD300600B33 /* bluegreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = A44FBFB420220AD300600B33 /* bluegreen.gif */; };
 		A44FBFB820220AD300600B33 /* lightblue.gif in Resources */ = {isa = PBXBuildFile; fileRef = A44FBFB520220AD300600B33 /* lightblue.gif */; };
 		A44FBFB920220AD300600B33 /* lightgreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = A44FBFB620220AD300600B33 /* lightgreen.gif */; };
+		A48A4A57210329B6000CA2EA /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A4A56210329B6000CA2EA /* BViewController.swift */; };
+		A48A4A59210368CE000CA2EA /* 青緑.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A58210368CE000CA2EA /* 青緑.gif */; };
+		A48A4A5B2103696F000CA2EA /* 水色.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A5A2103696E000CA2EA /* 水色.gif */; };
 		A490E88120232F53000B0983 /* ノート.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A490E88020232F53000B0983 /* ノート.jpg */; };
 		A490E883202330D4000B0983 /* lightbluegreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = A490E882202330D4000B0983 /* lightbluegreen.gif */; };
 /* End PBXBuildFile section */
@@ -63,6 +66,9 @@
 		A44FBFB420220AD300600B33 /* bluegreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = bluegreen.gif; path = "../../背景/bluegreen.gif"; sourceTree = "<group>"; };
 		A44FBFB520220AD300600B33 /* lightblue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = lightblue.gif; path = "../../背景/lightblue.gif"; sourceTree = "<group>"; };
 		A44FBFB620220AD300600B33 /* lightgreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = lightgreen.gif; path = "../../背景/lightgreen.gif"; sourceTree = "<group>"; };
+		A48A4A56210329B6000CA2EA /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
+		A48A4A58210368CE000CA2EA /* 青緑.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "青緑.gif"; path = "../../../青緑.gif"; sourceTree = "<group>"; };
+		A48A4A5A2103696E000CA2EA /* 水色.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "水色.gif"; path = "../../../水色.gif"; sourceTree = "<group>"; };
 		A490E88020232F53000B0983 /* ノート.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ノート.jpg"; path = "../../背景/ノート.jpg"; sourceTree = "<group>"; };
 		A490E882202330D4000B0983 /* lightbluegreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = lightbluegreen.gif; path = "../../背景/lightbluegreen.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,17 +122,20 @@
 		A445517E2009D565007115CC /* OriginalApplication */ = {
 			isa = PBXGroup;
 			children = (
+				A48A4A5A2103696E000CA2EA /* 水色.gif */,
+				A48A4A58210368CE000CA2EA /* 青緑.gif */,
 				A490E882202330D4000B0983 /* lightbluegreen.gif */,
 				A490E88020232F53000B0983 /* ノート.jpg */,
 				A44FBFB420220AD300600B33 /* bluegreen.gif */,
 				A44FBFB520220AD300600B33 /* lightblue.gif */,
 				A44FBFB620220AD300600B33 /* lightgreen.gif */,
 				A445517F2009D565007115CC /* AppDelegate.swift */,
-				A44551812009D565007115CC /* ViewController.swift */,
 				A44551AF2009E3E4007115CC /* AllSubjectsViewController.swift */,
 				A44551AD2009E3CE007115CC /* NotesViewController.swift */,
 				A44551B32009E40A007115CC /* ScoresViewController.swift */,
 				A44551B12009E3F8007115CC /* EachSubjectViewController.swift */,
+				A44551812009D565007115CC /* ViewController.swift */,
+				A48A4A56210329B6000CA2EA /* BViewController.swift */,
 				A44551832009D565007115CC /* Main.storyboard */,
 				A44551862009D565007115CC /* Assets.xcassets */,
 				A44551882009D565007115CC /* LaunchScreen.storyboard */,
@@ -260,10 +269,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48A4A5B2103696F000CA2EA /* 水色.gif in Resources */,
 				A445518A2009D565007115CC /* LaunchScreen.storyboard in Resources */,
 				A44FBFB820220AD300600B33 /* lightblue.gif in Resources */,
 				A44FBFB920220AD300600B33 /* lightgreen.gif in Resources */,
 				A44551872009D565007115CC /* Assets.xcassets in Resources */,
+				A48A4A59210368CE000CA2EA /* 青緑.gif in Resources */,
 				A490E88120232F53000B0983 /* ノート.jpg in Resources */,
 				A44551852009D565007115CC /* Main.storyboard in Resources */,
 				A44FBFB720220AD300600B33 /* bluegreen.gif in Resources */,
@@ -292,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48A4A57210329B6000CA2EA /* BViewController.swift in Sources */,
 				A44551822009D565007115CC /* ViewController.swift in Sources */,
 				A44551B42009E40A007115CC /* ScoresViewController.swift in Sources */,
 				A44551B22009E3F8007115CC /* EachSubjectViewController.swift in Sources */,

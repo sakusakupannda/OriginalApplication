@@ -20,9 +20,8 @@ class EachSubjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         label1.text = recieveValue
-        saveData.register(defaults: ["\(label1.text)score" : []])
+        saveData.register(defaults: ["\(label1.text!)score" : []])
         // Do any additional setup after loading the view.
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,12 +52,12 @@ class EachSubjectViewController: UIViewController {
         } else if Int(TextField.text!)! > 1000 {
             let alert: UIAlertController = UIAlertController(title: "保存できませんでした", message: "1000以下の数字を入力してください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)
             TextField.text = ""
         } else {
+            print("\(label1.text!)scores")
             ScoreArray.append (Int(TextField.text!)!)
-            saveData.set(ScoreArray, forKey: "\(label1.text)scores")
+            saveData.set(ScoreArray, forKey: "\(label1.text!)scores")
             TextField.text = ""
             let alert: UIAlertController = UIAlertController(title: "保存", message: "保存しました", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))

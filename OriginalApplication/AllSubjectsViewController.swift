@@ -20,7 +20,7 @@ class AllSubjectsViewController: UIViewController {
     var ScoreArray:[Int] = [0,0]
     let saveData: UserDefaults = UserDefaults.standard
     var i: Int = 0
-    var number1: Float = 0.0
+    var number1: Double = 0.00
     var number2: Int = 0
 
 
@@ -35,16 +35,17 @@ class AllSubjectsViewController: UIViewController {
             saveData.register(defaults: ["ScoreArray": 0])
         } else {
             for i in 1...9 {
+                print("Subject\(i)scores")
                 ScoreArray = saveData.object(forKey: "Subject\(i)scores") as! [Int]
+                number2 = number2 + ScoreArray[0]
             }
+            print(ScoreArray[0])
             self.average()
         }
     }
 
-    
     func average() {
-        number2 = ScoreArray[0] + ScoreArray[1] + ScoreArray[2] + ScoreArray[3]  + ScoreArray[4] + ScoreArray[5] + ScoreArray[6] + ScoreArray[7] + ScoreArray[8]
-        number1 = Float(number2 / 9)
+        number1 = Double(number2 / 9)
         label1.text = String(number1)
         label2.text = String(number2)
     }
