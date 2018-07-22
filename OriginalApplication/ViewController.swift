@@ -48,47 +48,83 @@ class ViewController: UIViewController {
     }
     
     @IBAction func subject1Button() {
-        value = "Subject1"
+        if Array[1] == "" {
+            value = "Subject1"
+        } else {
+            value = Array[1]
+        }
         performSegue(withIdentifier: "toEach", sender: nil)
     }
 
     @IBAction func subject2Button() {
-        value = "Subject2"
+        if Array[2] == "" {
+            value = "Subject2"
+        } else {
+            value = Array[2]
+        }
         performSegue(withIdentifier: "toEach", sender: nil)
     }
 
     @IBAction func subject3Button() {
-        value = "Subject3"
+        if Array[3] == "" {
+            value = "Subject3"
+        } else {
+            value = Array[3]
+        }
         performSegue(withIdentifier: "toEach", sender: nil)
     }
 
     @IBAction func subject4Button() {
-        value = "Subject4"
+        if Array[4] == "" {
+            value = "Subject4"
+        } else {
+            value = Array[4]
+        }
         performSegue(withIdentifier: "toEach", sender: nil)
     }
 
     @IBAction func subject5Button() {
-        value = "Subject5"
+        if Array[5] == "" {
+            value = "Subject5"
+        } else {
+            value = Array[5]
+        }
         performSegue(withIdentifier: "toEach", sender: nil)
     }
 
     @IBAction func subject6Button() {
-        value = "Subject6"
+        if Array[6] == "" {
+            value = "Subject6"
+        } else {
+            value = Array[6]
+        }
         performSegue(withIdentifier: "toEach", sender: nil)
     }
 
     @IBAction func subject7Button() {
-        value = "Subject7"
+        if Array[7] == "" {
+            value = "Subject7"
+        } else {
+            value = Array[7]
+        }
         performSegue(withIdentifier: "toEach", sender: nil)
     }
 
     @IBAction func subject8Button() {
-        value = "Subject8"
+        if Array[8] == "" {
+            value = "Subject8"
+        } else {
+            value = Array[8]
+        }
         performSegue(withIdentifier: "toEach", sender: nil)
     }
 
     @IBAction func subject9Button() {
-        value = "Subject9"
+        if Array[9] == "" {
+            value = "Subject9"
+        } else {
+            value = Array[9]
+        }
         performSegue(withIdentifier: "toEach", sender: nil)
     }
     
@@ -97,7 +133,6 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "toEach" {
             let secondViewController: EachSubjectViewController = segue.destination as! EachSubjectViewController
             secondViewController.recieveValue = self.value
@@ -106,6 +141,5 @@ class ViewController: UIViewController {
             let secondViewController: AllSubjectsViewController = segue.destination as! AllSubjectsViewController
             secondViewController.recieveValue = self.value
         }
-        
     }
 }

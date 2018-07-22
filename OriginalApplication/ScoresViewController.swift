@@ -23,8 +23,8 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
         print("\(text!)scores")
         table.delegate = self
         table.dataSource = self
-        if ScoreArray == nil {
-            let alert: UIAlertController = UIAlertController(title: "エラー", message: "点数を入れてください", preferredStyle: .alert)
+        if ScoreArray == [] {
+            let alert: UIAlertController = UIAlertController(title: "保存に失敗しました", message: "点数を入力してください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)
         } else {
@@ -99,7 +99,6 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.textLabel?.text = String(ScoreArray[indexPath.row])
         return cell!

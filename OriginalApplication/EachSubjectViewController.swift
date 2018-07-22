@@ -50,7 +50,7 @@ class EachSubjectViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)
         } else if Int(TextField.text!)! > 1000 {
-            let alert: UIAlertController = UIAlertController(title: "保存できませんでした", message: "1000以下の数字を入力してください", preferredStyle: .alert)
+            let alert: UIAlertController = UIAlertController(title: "保存に失敗しました", message: "1000以下の数字を入力してください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)
             TextField.text = ""

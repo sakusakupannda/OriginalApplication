@@ -29,6 +29,8 @@ class AllSubjectsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        ScoreArray = []
+        
         textView.text = saveData.object(forKey: "allnotes") as! String
         
         if ScoreArray == nil {
