@@ -15,13 +15,25 @@ class EachSubjectViewController: UIViewController {
     @IBOutlet var label1: UILabel!
     @IBOutlet var label2: UILabel!
     @IBOutlet var TextField: UITextField!
-    var ScoreArray: [Int] = []
+    var ScoreArray: [Int]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         label1.text = recieveValue
-        saveData.register(defaults: ["\(label1.text!)score" : []])
+        if saveData.object(forKey: "\(label1.text!)scores") == nil{
+            saveData.register(defaults: ["\(label1.text!)scores": []])
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if saveData == nil {
+            ScoreArray.append(0)
+            ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as! [Int]
+        } else {
+            ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as! [Int]
+        }
+        print(ScoreArray)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,10 +67,10 @@ class EachSubjectViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             TextField.text = ""
         } else {
-            print("\(label1.text!)scores")
-            ScoreArray.append (Int(TextField.text!)!)
+            ScoreArray.append(Int(TextField.text!)!)
             saveData.set(ScoreArray, forKey: "\(label1.text!)scores")
             TextField.text = ""
+            print(ScoreArray)
             let alert: UIAlertController = UIAlertController(title: "保存", message: "保存しました", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)

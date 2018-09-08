@@ -13,7 +13,7 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var table: UITableView!
     @IBOutlet var buttons: UIButton!
     var saveData: UserDefaults = UserDefaults.standard
-    var ScoreArray: [Int] = []
+    var ScoreArray: [Int]!
     var text: String!
 
     override func viewDidLoad() {
@@ -23,16 +23,13 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
         print("\(text!)scores")
         table.delegate = self
         table.dataSource = self
-        if ScoreArray == [] {
-            let alert: UIAlertController = UIAlertController(title: "保存に失敗しました", message: "点数を入力してください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
-            present(alert, animated: true, completion: nil)
-        } else {
-            ScoreArray = saveData.object(forKey: "\(text!)scores") as! [Int]
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if ScoreArray != [] {
+            ScoreArray = saveData.object(forKey: "\(text!)scores") as! [Int]
+        }
+        print(ScoreArray)
         self.table.reloadData()
         super.viewWillAppear(animated)
     }
@@ -72,6 +69,8 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             ScoreArray.remove(at: indexPath.row)
             saveData.set(ScoreArray, forKey: "\(text!)scores")
+            ScoreArray = saveData.object(forKey: "\(text!)scores") as! [Int]
+            print(ScoreArray)
         }
         //テーブルの再読み込み
         tableView.reloadData()
@@ -104,9 +103,17 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
         return cell!
     }
  
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toScores" {
+            let EachSubjectVC: EachSubjectViewController = segue.destination as! EachSubjectViewController
+            EachSubjectVC.ScoreArray = self.ScoreArray
+        }
+    }
     @IBAction func back() {
+        saveData.set(ScoreArray, forKey: "\(text!)scores")
+        ScoreArray = saveData.object(forKey: "\(text!)scores") as! [Int]
         self.dismiss(animated: true, completion: nil)
     }
+    
     
 }
