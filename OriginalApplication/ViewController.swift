@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @IBAction func subject1Button() {
         if Array[1] == "" {
             value = "Subject1"

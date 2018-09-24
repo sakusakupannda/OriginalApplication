@@ -19,23 +19,27 @@ class AllSubjectsViewController: UIViewController {
     @IBOutlet var label6: UILabel!
     @IBOutlet var textView: UITextView!
     @IBOutlet var textField: UITextField!
-    var ScoreArray:[Int] = [0,0]
+    var ScoreArray: [Int] = [0,0]
+    var tempScoreArray: [Int] = []
+    var Array :[String] = []
     let saveData: UserDefaults = UserDefaults.standard
     var i: Int = 1
     var number1: Double = 0.00
     var number2: Int = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         ScoreArray = []
+        Array = []
         
         textView.text = saveData.object(forKey: "allnotes") as! String
         if ScoreArray == [] {
             saveData.register(defaults: ["ScoreArray": 0])
         }
+        
         self.average()
         label2.text = "--"
         label1.text = String(number2)
@@ -50,6 +54,10 @@ class AllSubjectsViewController: UIViewController {
             let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "科目数を入れてください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)
+        } else if textField.text == "--" {
+            let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "科目数を入れてください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+            present(alert, animated: true, completion: nil)
         } else {
             self.average()
             number1 = Double(number2 / Int(textField.text!)!)
@@ -61,15 +69,29 @@ class AllSubjectsViewController: UIViewController {
     }
 
     func average() {
+        Array = saveData.object(forKey: "name") as! [String]
         number1 = 0
         number2 = 0
-        for i in 1...9 {
-            print("Subject\(i)scores")
-            ScoreArray = saveData.object(forKey: "Subject\(i)scores") as! [Int]
+        i = 1
+        for i in 1...12 {
+            tempScoreArray = []
+            tempScoreArray = saveData.object(forKey: "\(Array[i])scores") as! [Int]
+            print(i)
+            print(Array[i])
+            print(tempScoreArray.count)
+            if tempScoreArray.count != 0 {
+                ScoreArray = saveData.object(forKey: "\(Array[i])scores") as! [Int]
+                ScoreArray.append(0)
+            }else{
+                ScoreArray = saveData.object(forKey: "\(Array[i])scores") as! [Int]
+                ScoreArray.append(0)
+            }
             print(ScoreArray)
+            print(number2)
             number2 = number2 + ScoreArray[0]
         }
     }
+        
         
         
 
