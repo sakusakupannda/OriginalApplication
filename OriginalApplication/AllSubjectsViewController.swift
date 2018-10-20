@@ -35,14 +35,15 @@ class AllSubjectsViewController: UIViewController {
         ScoreArray = []
         Array = []
         
+        saveData.register(defaults: ["allnotes" : ""])
         textView.text = saveData.object(forKey: "allnotes") as! String
         if ScoreArray == [] {
             saveData.register(defaults: ["ScoreArray": 0])
         }
         
         self.average()
+        label1.text = "--"
         label2.text = "--"
-        label1.text = String(number2)
     }
     
     @IBAction func number() {
@@ -50,11 +51,11 @@ class AllSubjectsViewController: UIViewController {
             let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "0以外の数字を入れてください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)
-        } else if textField.text == nil {
+        } else if textField.text == "--" {
             let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "科目数を入れてください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)
-        } else if textField.text == "--" {
+        } else if textField.text == nil {
             let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "科目数を入れてください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)
@@ -74,27 +75,26 @@ class AllSubjectsViewController: UIViewController {
         number2 = 0
         i = 1
         for i in 1...12 {
-            tempScoreArray = []
-            tempScoreArray = saveData.object(forKey: "\(Array[i])scores") as! [Int]
+            if saveData == nil { saveData.register(defaults: ["\(label1.text!)scores": 0])
+            tempScoreArray = saveData.object(forKey: "\(label1.text!)scores") as! [Int]
             print(i)
             print(Array[i])
             print(tempScoreArray.count)
             if tempScoreArray.count != 0 {
-                ScoreArray = saveData.object(forKey: "\(Array[i])scores") as! [Int]
+                ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as! [Int]
                 ScoreArray.append(0)
             }else{
-                ScoreArray = saveData.object(forKey: "\(Array[i])scores") as! [Int]
+                ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as! [Int]
                 ScoreArray.append(0)
             }
             print(ScoreArray)
             print(number2)
             number2 = number2 + ScoreArray[0]
+            }
         }
     }
         
-        
-        
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

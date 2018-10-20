@@ -15,24 +15,17 @@ class EachSubjectViewController: UIViewController {
     @IBOutlet var label1: UILabel!
     @IBOutlet var label2: UILabel!
     @IBOutlet var TextField: UITextField!
-    var ScoreArray: [Int]!
+    var ScoreArray: [Int]! = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         label1.text = recieveValue
-        if saveData.object(forKey: "\(label1.text!)scores") == nil{
-            saveData.register(defaults: ["\(label1.text!)scores": []])
-        }
+        saveData.register(defaults: ["\(label1.text!)scores": []])
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if saveData == nil {
-            ScoreArray.append(0)
-            ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as! [Int]
-        } else {
-            ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as! [Int]
-        }
+        ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as! [Int]
         print(ScoreArray)
     }
 
