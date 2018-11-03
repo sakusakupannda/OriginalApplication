@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E9680025E118648A553BE8E /* Pods_OriginalApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D273083171388702153FB73A /* Pods_OriginalApplicationUITests.framework */; };
-		A43F3B49218DAC9A002CA991 /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F3B48218DAC9A002CA991 /* BarChartViewController.swift */; };
+		A43F3B51218DB155002CA991 /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F3B50218DB155002CA991 /* BarChartViewController.swift */; };
 		A44551802009D565007115CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445517F2009D565007115CC /* AppDelegate.swift */; };
 		A44551822009D565007115CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551812009D565007115CC /* ViewController.swift */; };
 		A44551852009D565007115CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A44551832009D565007115CC /* Main.storyboard */; };
@@ -53,7 +53,7 @@
 		239FF9897C171BA25DA30A04 /* Pods-OriginalApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalApplicationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OriginalApplicationTests/Pods-OriginalApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		464D16E4371B30D8ED26EEA1 /* Pods_OriginalApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0A788B9EC228A5880EB500 /* Pods-OriginalApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginalApplicationUITests/Pods-OriginalApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A43F3B48218DAC9A002CA991 /* BarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
+		A43F3B50218DB155002CA991 /* BarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		A445517C2009D565007115CC /* OriginalApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriginalApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A445517F2009D565007115CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A44551812009D565007115CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,14 +158,14 @@
 				A48A4A6221038702000CA2EA /* 群青色.gif */,
 				A48A4A60210386D7000CA2EA /* 黄緑色.gif */,
 				A490E88020232F53000B0983 /* ノート.jpg */,
-				A445517F2009D565007115CC /* AppDelegate.swift */,
 				A48A4A5E21038558000CA2EA /* NameViewController.swift */,
 				A44551812009D565007115CC /* ViewController.swift */,
 				A44551AF2009E3E4007115CC /* AllSubjectsViewController.swift */,
-				A43F3B48218DAC9A002CA991 /* BarChartViewController.swift */,
+				A43F3B50218DB155002CA991 /* BarChartViewController.swift */,
 				A44551B12009E3F8007115CC /* EachSubjectViewController.swift */,
 				A44551B32009E40A007115CC /* ScoresViewController.swift */,
 				A44551AD2009E3CE007115CC /* NotesViewController.swift */,
+				A445517F2009D565007115CC /* AppDelegate.swift */,
 				A44551832009D565007115CC /* Main.storyboard */,
 				A44551862009D565007115CC /* Assets.xcassets */,
 				A44551882009D565007115CC /* LaunchScreen.storyboard */,
@@ -442,7 +442,7 @@
 				A48A4A5F21038558000CA2EA /* NameViewController.swift in Sources */,
 				A44551B22009E3F8007115CC /* EachSubjectViewController.swift in Sources */,
 				A44551B02009E3E4007115CC /* AllSubjectsViewController.swift in Sources */,
-				A43F3B49218DAC9A002CA991 /* BarChartViewController.swift in Sources */,
+				A43F3B51218DB155002CA991 /* BarChartViewController.swift in Sources */,
 				A44551802009D565007115CC /* AppDelegate.swift in Sources */,
 				A44551AE2009E3CE007115CC /* NotesViewController.swift in Sources */,
 			);

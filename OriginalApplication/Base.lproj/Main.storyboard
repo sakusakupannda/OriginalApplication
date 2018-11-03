@@ -379,20 +379,30 @@
             </objects>
             <point key="canvasLocation" x="-250.40000000000001" y="89.505247376311857"/>
         </scene>
-        <!--View Controller-->
+        <!--Bar Chart View Controller-->
         <scene sceneID="GtL-h6-hKb">
             <objects>
-                <viewController id="b7k-X2-dSF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ACm-1G-gec" customClass="BarChartView" customModule="Charts">
+                <viewController id="b7k-X2-dSF" customClass="BarChartViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ACm-1G-gec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="keE-pb-AA9" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="67" y="322" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="y3N-xr-Y2n"/>
                     </view>
+                    <connections>
+                        <outlet property="barChartView" destination="keE-pb-AA9" id="ubm-LP-kpd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5B1-ia-e3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2441" y="-432"/>
+            <point key="canvasLocation" x="2440.8000000000002" y="-432.23388305847078"/>
         </scene>
         <!--All Subjects View Controller-->
         <scene sceneID="1Us-xf-oG6">
