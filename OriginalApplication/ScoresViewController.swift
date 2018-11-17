@@ -13,7 +13,7 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var table: UITableView!
     @IBOutlet var buttons: UIButton!
     var saveData: UserDefaults = UserDefaults.standard
-    var ScoreArray: [Int]!
+    var ScoreArray: [Double]!
     var text: String!
 
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         if ScoreArray != [] {
-            ScoreArray = saveData.object(forKey: "\(text!)scores") as! [Int]
+            ScoreArray = saveData.object(forKey: "\(text!)scores") as? [Double]
         }
         print(ScoreArray)
         self.table.reloadData()
@@ -69,7 +69,7 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             ScoreArray.remove(at: indexPath.row)
             saveData.set(ScoreArray, forKey: "\(text!)scores")
-            ScoreArray = saveData.object(forKey: "\(text!)scores") as! [Int]
+            ScoreArray = saveData.object(forKey: "\(text!)scores") as? [Double]
             print(ScoreArray)
         }
         //テーブルの再読み込み
@@ -87,7 +87,7 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
         ScoreArray.remove(at: sourceIndexPath.row)
         
         //移動先の位置にデータを配列に挿入する。
-        ScoreArray.insert(Int(moveData!)!, at: destinationIndexPath.row)
+        ScoreArray.insert((Double(moveData!)!), at: destinationIndexPath.row)
         
     }
     
@@ -110,8 +110,10 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     @IBAction func back() {
-        saveData.set(ScoreArray, forKey: "\(text!)scores")
-        ScoreArray = saveData.object(forKey: "\(text!)scores") as! [Int]
+        if isFirstResponder == false {
+            saveData.set(ScoreArray, forKey: "\(text!)scores")
+            ScoreArray = saveData.object(forKey: "\(text!)scores") as? [Double]
+        }
         self.dismiss(animated: true, completion: nil)
     }
     

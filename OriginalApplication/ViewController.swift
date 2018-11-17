@@ -26,7 +26,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
         let saveData: UserDefaults = UserDefaults.standard
         Array = saveData.object(forKey: "name") as! [String]
         
@@ -39,7 +42,6 @@ class ViewController: UIViewController {
         button7.setTitle(Array[7], for: .normal)
         button8.setTitle(Array[8], for: .normal)
         button9.setTitle(Array[9], for: .normal)
-        
     }
 
     override func didReceiveMemoryWarning() {

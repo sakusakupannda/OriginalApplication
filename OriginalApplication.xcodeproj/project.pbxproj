@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E9680025E118648A553BE8E /* Pods_OriginalApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D273083171388702153FB73A /* Pods_OriginalApplicationUITests.framework */; };
+		A40BC4BC21930E0400F34639 /* 背景5.gif in Resources */ = {isa = PBXBuildFile; fileRef = A40BC4BA21930E0400F34639 /* 背景5.gif */; };
+		A40BC4BD21930E0400F34639 /* 背景6.gif in Resources */ = {isa = PBXBuildFile; fileRef = A40BC4BB21930E0400F34639 /* 背景6.gif */; };
 		A43F3B51218DB155002CA991 /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F3B50218DB155002CA991 /* BarChartViewController.swift */; };
 		A44551802009D565007115CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445517F2009D565007115CC /* AppDelegate.swift */; };
 		A44551822009D565007115CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551812009D565007115CC /* ViewController.swift */; };
@@ -21,12 +23,12 @@
 		A44551B22009E3F8007115CC /* EachSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551B12009E3F8007115CC /* EachSubjectViewController.swift */; };
 		A44551B42009E40A007115CC /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551B32009E40A007115CC /* ScoresViewController.swift */; };
 		A48A4A5F21038558000CA2EA /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A4A5E21038558000CA2EA /* NameViewController.swift */; };
-		A48A4A61210386D7000CA2EA /* 黄緑色.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A60210386D7000CA2EA /* 黄緑色.gif */; };
-		A48A4A6321038702000CA2EA /* 群青色.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A6221038702000CA2EA /* 群青色.gif */; };
-		A48A4A6521038724000CA2EA /* 青緑々色.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A6421038724000CA2EA /* 青緑々色.gif */; };
-		A48A4A6721038760000CA2EA /* 青緑色.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A6621038760000CA2EA /* 青緑色.gif */; };
-		A48A4A69210387BA000CA2EA /* 青々緑色.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A68210387BA000CA2EA /* 青々緑色.gif */; };
+		A48A4A6321038702000CA2EA /* 背景2.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A6221038702000CA2EA /* 背景2.gif */; };
+		A48A4A6521038724000CA2EA /* 背景3.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A6421038724000CA2EA /* 背景3.gif */; };
+		A48A4A6721038760000CA2EA /* 背景1.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A6621038760000CA2EA /* 背景1.gif */; };
+		A48A4A69210387BA000CA2EA /* 背景4.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A68210387BA000CA2EA /* 背景4.gif */; };
 		A490E88120232F53000B0983 /* ノート.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A490E88020232F53000B0983 /* ノート.jpg */; };
+		A4D8D655219FDEBD000FDCC2 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D8D654219FDEBD000FDCC2 /* GraphViewController.swift */; };
 		B44927614DA47EE472C05DEF /* Pods_OriginalApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464D16E4371B30D8ED26EEA1 /* Pods_OriginalApplication.framework */; };
 		F6F3E6642AD801CDF0BA1CCE /* Pods_OriginalApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF20F96052AB6A3353B95F1 /* Pods_OriginalApplicationTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		239FF9897C171BA25DA30A04 /* Pods-OriginalApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalApplicationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OriginalApplicationTests/Pods-OriginalApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		464D16E4371B30D8ED26EEA1 /* Pods_OriginalApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0A788B9EC228A5880EB500 /* Pods-OriginalApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginalApplicationUITests/Pods-OriginalApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A40BC4BA21930E0400F34639 /* 背景5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景5.gif"; path = "../../背景/背景5.gif"; sourceTree = "<group>"; };
+		A40BC4BB21930E0400F34639 /* 背景6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景6.gif"; path = "../../背景/背景6.gif"; sourceTree = "<group>"; };
 		A43F3B50218DB155002CA991 /* BarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		A445517C2009D565007115CC /* OriginalApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriginalApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A445517F2009D565007115CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,12 +76,12 @@
 		A44551B12009E3F8007115CC /* EachSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachSubjectViewController.swift; sourceTree = "<group>"; };
 		A44551B32009E40A007115CC /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 		A48A4A5E21038558000CA2EA /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
-		A48A4A60210386D7000CA2EA /* 黄緑色.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "黄緑色.gif"; path = "../../背景/黄緑色.gif"; sourceTree = "<group>"; };
-		A48A4A6221038702000CA2EA /* 群青色.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "群青色.gif"; path = "../../背景/群青色.gif"; sourceTree = "<group>"; };
-		A48A4A6421038724000CA2EA /* 青緑々色.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "青緑々色.gif"; path = "../../背景/青緑々色.gif"; sourceTree = "<group>"; };
-		A48A4A6621038760000CA2EA /* 青緑色.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "青緑色.gif"; path = "../../背景/青緑色.gif"; sourceTree = "<group>"; };
-		A48A4A68210387BA000CA2EA /* 青々緑色.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "青々緑色.gif"; path = "../../背景/青々緑色.gif"; sourceTree = "<group>"; };
+		A48A4A6221038702000CA2EA /* 背景2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景2.gif"; path = "../../背景/背景2.gif"; sourceTree = "<group>"; };
+		A48A4A6421038724000CA2EA /* 背景3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景3.gif"; path = "../../背景/背景3.gif"; sourceTree = "<group>"; };
+		A48A4A6621038760000CA2EA /* 背景1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景1.gif"; path = "../../背景/背景1.gif"; sourceTree = "<group>"; };
+		A48A4A68210387BA000CA2EA /* 背景4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景4.gif"; path = "../../背景/背景4.gif"; sourceTree = "<group>"; };
 		A490E88020232F53000B0983 /* ノート.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ノート.jpg"; path = "../../背景/ノート.jpg"; sourceTree = "<group>"; };
+		A4D8D654219FDEBD000FDCC2 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		C94BD97B5EB671E5D665CB6D /* Pods-OriginalApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalApplicationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginalApplicationTests/Pods-OriginalApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
 		CEF20F96052AB6A3353B95F1 /* Pods_OriginalApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D273083171388702153FB73A /* Pods_OriginalApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,11 +156,12 @@
 		A445517E2009D565007115CC /* OriginalApplication */ = {
 			isa = PBXGroup;
 			children = (
-				A48A4A68210387BA000CA2EA /* 青々緑色.gif */,
-				A48A4A6621038760000CA2EA /* 青緑色.gif */,
-				A48A4A6421038724000CA2EA /* 青緑々色.gif */,
-				A48A4A6221038702000CA2EA /* 群青色.gif */,
-				A48A4A60210386D7000CA2EA /* 黄緑色.gif */,
+				A48A4A6621038760000CA2EA /* 背景1.gif */,
+				A48A4A6221038702000CA2EA /* 背景2.gif */,
+				A48A4A6421038724000CA2EA /* 背景3.gif */,
+				A48A4A68210387BA000CA2EA /* 背景4.gif */,
+				A40BC4BA21930E0400F34639 /* 背景5.gif */,
+				A40BC4BB21930E0400F34639 /* 背景6.gif */,
 				A490E88020232F53000B0983 /* ノート.jpg */,
 				A48A4A5E21038558000CA2EA /* NameViewController.swift */,
 				A44551812009D565007115CC /* ViewController.swift */,
@@ -165,6 +170,7 @@
 				A44551B12009E3F8007115CC /* EachSubjectViewController.swift */,
 				A44551B32009E40A007115CC /* ScoresViewController.swift */,
 				A44551AD2009E3CE007115CC /* NotesViewController.swift */,
+				A4D8D654219FDEBD000FDCC2 /* GraphViewController.swift */,
 				A445517F2009D565007115CC /* AppDelegate.swift */,
 				A44551832009D565007115CC /* Main.storyboard */,
 				A44551862009D565007115CC /* Assets.xcassets */,
@@ -313,13 +319,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A48A4A6721038760000CA2EA /* 青緑色.gif in Resources */,
-				A48A4A61210386D7000CA2EA /* 黄緑色.gif in Resources */,
+				A40BC4BC21930E0400F34639 /* 背景5.gif in Resources */,
+				A48A4A6721038760000CA2EA /* 背景1.gif in Resources */,
 				A445518A2009D565007115CC /* LaunchScreen.storyboard in Resources */,
 				A44551872009D565007115CC /* Assets.xcassets in Resources */,
-				A48A4A6321038702000CA2EA /* 群青色.gif in Resources */,
-				A48A4A69210387BA000CA2EA /* 青々緑色.gif in Resources */,
-				A48A4A6521038724000CA2EA /* 青緑々色.gif in Resources */,
+				A40BC4BD21930E0400F34639 /* 背景6.gif in Resources */,
+				A48A4A6321038702000CA2EA /* 背景2.gif in Resources */,
+				A48A4A69210387BA000CA2EA /* 背景4.gif in Resources */,
+				A48A4A6521038724000CA2EA /* 背景3.gif in Resources */,
 				A490E88120232F53000B0983 /* ノート.jpg in Resources */,
 				A44551852009D565007115CC /* Main.storyboard in Resources */,
 			);
@@ -437,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D8D655219FDEBD000FDCC2 /* GraphViewController.swift in Sources */,
 				A44551822009D565007115CC /* ViewController.swift in Sources */,
 				A44551B42009E40A007115CC /* ScoresViewController.swift in Sources */,
 				A48A4A5F21038558000CA2EA /* NameViewController.swift in Sources */,

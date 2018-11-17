@@ -15,7 +15,7 @@ class EachSubjectViewController: UIViewController {
     @IBOutlet var label1: UILabel!
     @IBOutlet var label2: UILabel!
     @IBOutlet var TextField: UITextField!
-    var ScoreArray: [Int]! = []
+    var ScoreArray: [Double]! = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class EachSubjectViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as! [Int]
+        ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as? [Double]
         print(ScoreArray)
     }
 
@@ -60,7 +60,7 @@ class EachSubjectViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             TextField.text = ""
         } else {
-            ScoreArray.append(Int(TextField.text!)!)
+            ScoreArray.append(Double(TextField.text!)!)
             saveData.set(ScoreArray, forKey: "\(label1.text!)scores")
             TextField.text = ""
             print(ScoreArray)
@@ -85,6 +85,9 @@ class EachSubjectViewController: UIViewController {
             let NotesVC: NotesViewController = segue.destination as! NotesViewController
             NotesVC.recieveValue = self.value
             NotesVC.text = self.label1.text
+        } else if segue.identifier == "toGraph" {
+            let GraphVC: GraphChartViewController = segue.destination as! GraphChartViewController
+            GraphVC.ScoreArray = self.ScoreArray
         }
     }
     

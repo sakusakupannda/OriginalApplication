@@ -36,7 +36,7 @@ class AllSubjectsViewController: UIViewController {
         Array = []
         
         saveData.register(defaults: ["allnotes" : ""])
-        textView.text = saveData.object(forKey: "allnotes") as! String
+        textView.text = saveData.object(forKey: "allnotes") as? String
         if ScoreArray == [] {
             saveData.register(defaults: ["ScoreArray": 0])
         }
@@ -92,7 +92,7 @@ class AllSubjectsViewController: UIViewController {
 //            } else {
             
             
-                ScoreArray = saveData.object(forKey: "\(Array[i])scores") as! [Int]
+//                ScoreArray = saveData.object(forKey: "\(Array[i])scores") as! [Int]
                 ScoreArray.append(0)
             
             
@@ -120,6 +120,11 @@ class AllSubjectsViewController: UIViewController {
     
     @IBAction func back() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let secondViewController: BarChartViewController = segue.destination as! BarChartViewController
+        secondViewController.dataPoints = self.Array
     }
     
 
