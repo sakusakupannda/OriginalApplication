@@ -16,17 +16,20 @@ class EachSubjectViewController: UIViewController {
     @IBOutlet var label2: UILabel!
     @IBOutlet var TextField: UITextField!
     var ScoreArray: [Double]! = []
+    var Array: [String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         label1.text = recieveValue
         saveData.register(defaults: ["\(label1.text!)scores": []])
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as? [Double]
         print(ScoreArray)
+        print(Array)
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,9 +88,11 @@ class EachSubjectViewController: UIViewController {
             let NotesVC: NotesViewController = segue.destination as! NotesViewController
             NotesVC.recieveValue = self.value
             NotesVC.text = self.label1.text
-        } else if segue.identifier == "toGraph" {
-            let GraphVC: GraphChartViewController = segue.destination as! GraphChartViewController
-            GraphVC.ScoreArray = self.ScoreArray
+        } else if segue.identifier == "toLineChart" {
+            let LineChartVC: LineChartViewController = segue.destination as! LineChartViewController
+            LineChartVC.ScoreArray = self.ScoreArray
+            LineChartVC.text = self.label1.text
+            LineChartVC.datapoints = self.Array
         }
     }
     

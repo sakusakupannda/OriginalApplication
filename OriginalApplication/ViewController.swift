@@ -139,9 +139,9 @@ class ViewController: UIViewController {
         if segue.identifier == "toEach" {
             let secondViewController: EachSubjectViewController = segue.destination as! EachSubjectViewController
             secondViewController.recieveValue = self.value
-        } else if segue.identifier == "toAll" {
-            let secondViewController: AllSubjectsViewController = segue.destination as! AllSubjectsViewController
-            secondViewController.recieveValue = self.value
+            secondViewController.Array = self.Array
+//        } else if segue.identifier == "toAll" {
+//            let secondViewController: AllSubjectsViewController = segue.destination as! AllSubjectsViewController
         }
     }
 }

@@ -28,7 +28,7 @@
 		A48A4A6721038760000CA2EA /* 背景1.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A6621038760000CA2EA /* 背景1.gif */; };
 		A48A4A69210387BA000CA2EA /* 背景4.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A68210387BA000CA2EA /* 背景4.gif */; };
 		A490E88120232F53000B0983 /* ノート.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A490E88020232F53000B0983 /* ノート.jpg */; };
-		A4D8D655219FDEBD000FDCC2 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D8D654219FDEBD000FDCC2 /* GraphViewController.swift */; };
+		A4D8D655219FDEBD000FDCC2 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D8D654219FDEBD000FDCC2 /* LineChartViewController.swift */; };
 		B44927614DA47EE472C05DEF /* Pods_OriginalApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464D16E4371B30D8ED26EEA1 /* Pods_OriginalApplication.framework */; };
 		F6F3E6642AD801CDF0BA1CCE /* Pods_OriginalApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF20F96052AB6A3353B95F1 /* Pods_OriginalApplicationTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,7 +81,7 @@
 		A48A4A6621038760000CA2EA /* 背景1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景1.gif"; path = "../../背景/背景1.gif"; sourceTree = "<group>"; };
 		A48A4A68210387BA000CA2EA /* 背景4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景4.gif"; path = "../../背景/背景4.gif"; sourceTree = "<group>"; };
 		A490E88020232F53000B0983 /* ノート.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ノート.jpg"; path = "../../背景/ノート.jpg"; sourceTree = "<group>"; };
-		A4D8D654219FDEBD000FDCC2 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		A4D8D654219FDEBD000FDCC2 /* LineChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
 		C94BD97B5EB671E5D665CB6D /* Pods-OriginalApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalApplicationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginalApplicationTests/Pods-OriginalApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
 		CEF20F96052AB6A3353B95F1 /* Pods_OriginalApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D273083171388702153FB73A /* Pods_OriginalApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +170,7 @@
 				A44551B12009E3F8007115CC /* EachSubjectViewController.swift */,
 				A44551B32009E40A007115CC /* ScoresViewController.swift */,
 				A44551AD2009E3CE007115CC /* NotesViewController.swift */,
-				A4D8D654219FDEBD000FDCC2 /* GraphViewController.swift */,
+				A4D8D654219FDEBD000FDCC2 /* LineChartViewController.swift */,
 				A445517F2009D565007115CC /* AppDelegate.swift */,
 				A44551832009D565007115CC /* Main.storyboard */,
 				A44551862009D565007115CC /* Assets.xcassets */,
@@ -444,7 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4D8D655219FDEBD000FDCC2 /* GraphViewController.swift in Sources */,
+				A4D8D655219FDEBD000FDCC2 /* LineChartViewController.swift in Sources */,
 				A44551822009D565007115CC /* ViewController.swift in Sources */,
 				A44551B42009E40A007115CC /* ScoresViewController.swift in Sources */,
 				A48A4A5F21038558000CA2EA /* NameViewController.swift in Sources */,

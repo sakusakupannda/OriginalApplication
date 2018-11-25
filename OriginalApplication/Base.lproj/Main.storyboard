@@ -527,7 +527,7 @@
                                 <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="17"/>
                                 <state key="normal" title="to graph-&gt;"/>
                                 <connections>
-                                    <segue destination="b7k-X2-dSF" kind="presentation" id="JrW-fR-sKq"/>
+                                    <segue destination="b7k-X2-dSF" kind="presentation" identifier="toBarChart" id="JrW-fR-sKq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1S-NQ-uS4">
@@ -785,7 +785,7 @@
                                     <color key="titleColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4ro-MI-4Op" kind="presentation" id="npi-Ka-uyg"/>
+                                    <segue destination="4ro-MI-4Op" kind="presentation" identifier="toLineChart" id="npi-Ka-uyg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -802,10 +802,10 @@
             </objects>
             <point key="canvasLocation" x="1080.8" y="492.50374812593708"/>
         </scene>
-        <!--Graph View Controller-->
+        <!--Line Chart View Controller-->
         <scene sceneID="5vN-uD-qR7">
             <objects>
-                <viewController id="4ro-MI-4Op" customClass="GraphViewController" sceneMemberID="viewController">
+                <viewController id="4ro-MI-4Op" customClass="LineChartViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gqG-9k-d3a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -822,9 +822,10 @@
                                 <connections>
                                     <action selector="back" destination="mdy-PG-djJ" eventType="touchUpInside" id="CkH-wv-QOl"/>
                                     <action selector="back" destination="b7k-X2-dSF" eventType="touchUpInside" id="E9C-z4-NOe"/>
+                                    <action selector="back" destination="4ro-MI-4Op" eventType="touchUpInside" id="z4q-vB-cw7"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUZ-dt-LYH" customClass="GraphView" customModule="Charts">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUZ-dt-LYH" customClass="lineChartView" customModule="Charts">
                                 <rect key="frame" x="42" y="42" width="290" height="541"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -833,6 +834,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YqU-bT-CxN"/>
                     </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="tUZ-dt-LYH" id="4JV-tq-X94"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TO-Xd-eIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

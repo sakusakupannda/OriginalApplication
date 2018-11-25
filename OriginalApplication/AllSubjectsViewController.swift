@@ -10,7 +10,6 @@ import UIKit
 
 class AllSubjectsViewController: UIViewController {
     
-    var recieveValue: String!
     @IBOutlet var label1: UILabel!
     @IBOutlet var label2: UILabel!
     @IBOutlet var label3: UILabel!
@@ -74,6 +73,7 @@ class AllSubjectsViewController: UIViewController {
         for i in 1...9 {
             print(i)
             print(Array[i])
+            print(ScoreArray)
             print(tempScoreArray.count)
             
             
@@ -123,8 +123,13 @@ class AllSubjectsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAll" {
+            let VC: ViewController = segue.destination as! ViewController
+            VC.Array = self.Array
+        } else if segue.identifier == "toBarChart" {
             let secondViewController: BarChartViewController = segue.destination as! BarChartViewController
-        secondViewController.dataPoints = self.Array
+            secondViewController.datapoints = self.Array
+        }
     }
     
 
