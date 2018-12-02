@@ -92,7 +92,6 @@ class EachSubjectViewController: UIViewController {
             let LineChartVC: LineChartViewController = segue.destination as! LineChartViewController
             LineChartVC.ScoreArray = self.ScoreArray
             LineChartVC.text = self.label1.text
-            LineChartVC.datapoints = self.Array
         }
     }
     
