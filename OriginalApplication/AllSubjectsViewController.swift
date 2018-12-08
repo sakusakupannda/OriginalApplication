@@ -16,15 +16,22 @@ class AllSubjectsViewController: UIViewController {
     @IBOutlet var label4: UILabel!
     @IBOutlet var label5: UILabel!
     @IBOutlet var label6: UILabel!
+    @IBOutlet var label7: UILabel!
+    @IBOutlet var label8: UILabel!
     @IBOutlet var textView: UITextView!
-    @IBOutlet var textField: UITextField!
-    var ScoreArray: [Int] = [0,0]
-    var tempScoreArray: [Int] = []
-    var Array :[String] = []
+    //@IBOutlet var textField: UITextField!
+    var ScoreArray: [Double] = [0,0]
+    var tempArray: [Double] = []
+    //var AvgArray: [Double] = [] //各教科の平均のArray
+    //var SumArray: [Double] = [] //各教科の合計のArray
+    var Array: [String] = [] //教科名のArray
+    //var value: String!
     let saveData: UserDefaults = UserDefaults.standard
-    var i: Int = 1
-    var number1: Double = 0.00
-    var number2: Int = 0
+    //var i: Int = 1
+    var avg1: Double = 0 //全教科の平均
+    var sum1: Double = 0 //全教科の合計
+    var avg2: Double = 0 //各教科の平均
+    var sum2: Double = 0 //各教科の合計
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,76 +40,82 @@ class AllSubjectsViewController: UIViewController {
         
         ScoreArray = []
         Array = []
+        self.calculate()
+        print("平均は\(avg1)点")
+        print("合計は\(sum1)点")
         
         saveData.register(defaults: ["allnotes" : ""])
         textView.text = saveData.object(forKey: "allnotes") as? String
-        if ScoreArray == [] {
-            saveData.register(defaults: ["ScoreArray": 0])
-        }
-        
-        self.average()
-        label1.text = "--"
-        label2.text = "--"
     }
     
-    @IBAction func number() {
-        if Int(textField.text!) == 0 {
-            let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "0以外の数字を入れてください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
-            present(alert, animated: true, completion: nil)
-        } else if textField.text == "" {
-            let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "科目数を入れてください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
-            present(alert, animated: true, completion: nil)
-        } else {
-            self.average()
-            number1 = Double(number2 / Int(textField.text!)!)
-            label1.text = String(number2)
-            label2.text = String(number1)
-            print("平均は\(number1)点")
-            print("合計は\(number2)点")
-        }
-    }
+    
+//    @IBAction func number() {
+//        if Int(textField.text!) == 0 {
+//            let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "0以外の数字を入れてください", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+//            present(alert, animated: true, completion: nil)
+//        } else if textField.text == "" {
+//            let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "科目数を入れてください", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+//            present(alert, animated: true, completion: nil)
+//        } else {
+//            self.calculate()
+//            //avg1 = sum1 / Double(textField.text!)!
+//            //label1.text = String(sum1)
+//            //label2.text = String(avg1)
+//            print("平均は\(avg1)点")
+//            print("合計は\(sum1)点")
+        //}
+//    }
 
-    func average() {
+    func calculate() {
+        var num: Int = 0 //全体の満点だった時のやつ
+        sum1 = 0
+        avg1 = 0
         Array = saveData.object(forKey: "name") as! [String]
-        number1 = 0
-        number2 = 0
-        i = 1
+        tempArray = []
         
-        for i in 1...9 {
-            print(i)
+        //教科ごとのfor文
+        for i in 1..<Array.count {
+            sum2 = 0
+            avg2 = 0
+            
+            //各教科のScoreArrayに点数を入れる
+            ScoreArray = []
+            saveData.register(defaults: ["ScoreArray": []])
+            saveData.register(defaults: ["\(Array[i])scores": []])
+            ScoreArray = (saveData.object(forKey: "\(Array[i])scores") as? [Double])!
+            
+            //点数を足していく
+            for i in 0..<ScoreArray.count{
+                sum1 = sum1 + ScoreArray[i]
+                tempArray.append(ScoreArray[i])
+                sum2 = sum2 + ScoreArray[i]
+            }
+            
+            saveData.set(avg2, forKey: "\(Array[i])avg") //BarChartVCで使う
+            avg2 = sum2 / Double(ScoreArray.count)
+            saveData.set(avg2, forKey: "\(Array[i])avg") //BarChartVCで使う
+            num = 100 * tempArray.count
+            
             print(Array[i])
             print(ScoreArray)
-            print(tempScoreArray.count)
-            
-            
-//            if tempScoreArray.count != 0 {
-//
-//
-//                if ScoreArray.count != 0 {
-//                    ScoreArray.append(0)
-//                } else {
-//                    ScoreArray = saveData.object(forKey: "\(Array[i])scores") as! [Int]
-//                    tempScoreArray.append(ScoreArray[0])
-//                }
-//
-//
-//
-//            } else {
-            
-            
-//                ScoreArray = saveData.object(forKey: "\(Array[i])scores") as! [Int]
-                ScoreArray.append(0)
-            
-            
-//            }
-            
-            
-            print(ScoreArray)
-            print(number2)
-            number2 = number2 + ScoreArray[0]
+            print(tempArray)
+            print(sum2)
+            print(avg2)
         }
+        
+        if tempArray.count == 0 {
+            avg1 = 0
+        } else {
+            avg1 = sum1 / Double(tempArray.count)
+        }
+        print(sum1)
+        print(avg1)
+        label4.text = String(avg1)
+        label5.text = String(Int(sum1))
+        label7.text = String(num)
+        
      }
         
     
@@ -122,6 +135,10 @@ class AllSubjectsViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAll" {
             let VC: ViewController = segue.destination as! ViewController
@@ -129,6 +146,9 @@ class AllSubjectsViewController: UIViewController {
         } else if segue.identifier == "toBarChart" {
             let secondViewController: BarChartViewController = segue.destination as! BarChartViewController
             secondViewController.datapoints = self.Array
+            secondViewController.entry = self.ScoreArray
+            //secondViewController.sum = self.sum2
+            //secondViewController.avg = self.avg2
         }
     }
     
