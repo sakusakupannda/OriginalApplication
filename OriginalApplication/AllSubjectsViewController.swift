@@ -19,15 +19,11 @@ class AllSubjectsViewController: UIViewController {
     @IBOutlet var label7: UILabel!
     @IBOutlet var label8: UILabel!
     @IBOutlet var textView: UITextView!
-    //@IBOutlet var textField: UITextField!
     var ScoreArray: [Double] = [0,0]
     var tempArray: [Double] = []
-    //var AvgArray: [Double] = [] //各教科の平均のArray
-    //var SumArray: [Double] = [] //各教科の合計のArray
+    var avgArray: [Double] = []
     var Array: [String] = [] //教科名のArray
-    //var value: String!
     let saveData: UserDefaults = UserDefaults.standard
-    //var i: Int = 1
     var avg1: Double = 0 //全教科の平均
     var sum1: Double = 0 //全教科の合計
     var avg2: Double = 0 //各教科の平均
@@ -38,8 +34,6 @@ class AllSubjectsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        ScoreArray = []
-        Array = []
         self.calculate()
         print("平均は\(avg1)点")
         print("合計は\(sum1)点")
@@ -49,29 +43,12 @@ class AllSubjectsViewController: UIViewController {
     }
     
     
-//    @IBAction func number() {
-//        if Int(textField.text!) == 0 {
-//            let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "0以外の数字を入れてください", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
-//            present(alert, animated: true, completion: nil)
-//        } else if textField.text == "" {
-//            let alert: UIAlertController = UIAlertController(title: "計算に失敗しました", message: "科目数を入れてください", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
-//            present(alert, animated: true, completion: nil)
-//        } else {
-//            self.calculate()
-//            //avg1 = sum1 / Double(textField.text!)!
-//            //label1.text = String(sum1)
-//            //label2.text = String(avg1)
-//            print("平均は\(avg1)点")
-//            print("合計は\(sum1)点")
-        //}
-//    }
 
     func calculate() {
         var num: Int = 0 //全体の満点だった時のやつ
         sum1 = 0
         avg1 = 0
+        Array = []
         Array = saveData.object(forKey: "name") as! [String]
         tempArray = []
         
@@ -93,9 +70,13 @@ class AllSubjectsViewController: UIViewController {
                 sum2 = sum2 + ScoreArray[i]
             }
             
-            saveData.set(avg2, forKey: "\(Array[i])avg") //BarChartVCで使う
-            avg2 = sum2 / Double(ScoreArray.count)
-            saveData.set(avg2, forKey: "\(Array[i])avg") //BarChartVCで使う
+            if ScoreArray.count == 0 {
+                avg2 = 0
+            } else {
+                avg2 = sum2 / Double(ScoreArray.count)
+            }
+            avgArray.append(avg2)
+            saveData.set(avgArray, forKey: "\(Array[i])avg") //BarChartVCで使う
             num = 100 * tempArray.count
             
             print(Array[i])
@@ -145,10 +126,7 @@ class AllSubjectsViewController: UIViewController {
             VC.Array = self.Array
         } else if segue.identifier == "toBarChart" {
             let secondViewController: BarChartViewController = segue.destination as! BarChartViewController
-            secondViewController.datapoints = self.Array
             secondViewController.entry = self.ScoreArray
-            //secondViewController.sum = self.sum2
-            //secondViewController.avg = self.avg2
         }
     }
     

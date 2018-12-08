@@ -29,7 +29,6 @@ class EachSubjectViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         ScoreArray = saveData.object(forKey: "\(label1.text!)scores") as? [Double]
         print(ScoreArray)
-        print(Array)
     }
 
     override func didReceiveMemoryWarning() {

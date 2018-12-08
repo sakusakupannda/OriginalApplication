@@ -59,17 +59,6 @@ class NameViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        // textFiel の情報を受け取るための delegate を設定
-//        TextField1.delegate = self as? UITextFieldDelegate
-//        TextField2.delegate = self as? UITextFieldDelegate
-//        TextField3.delegate = self as? UITextFieldDelegate
-//        TextField4.delegate = self as? UITextFieldDelegate
-//        TextField5.delegate = self as? UITextFieldDelegate
-//        TextField6.delegate = self as? UITextFieldDelegate
-//        TextField7.delegate = self as? UITextFieldDelegate
-//        TextField8.delegate = self as? UITextFieldDelegate
-//        TextField9.delegate = self as? UITextFieldDelegate
-//
     }
     
     @IBAction func button() {
@@ -80,15 +69,6 @@ class NameViewController: UIViewController {
         let alert: UIAlertController = UIAlertController(title: "保存", message: "保存しました", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
         present(alert, animated: true, completion: nil)
-//        TextField1.endEditing(true);
-//        TextField2.endEditing(true);
-//        TextField3.endEditing(true);
-//        TextField4.endEditing(true);
-//        TextField5.endEditing(true);
-//        TextField6.endEditing(true);
-//        TextField7.endEditing(true);
-//        TextField8.endEditing(true);
-//        TextField9.endEditing(true);
     }
     
     @IBAction func clear() {
