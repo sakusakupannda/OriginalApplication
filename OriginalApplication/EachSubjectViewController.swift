@@ -19,9 +19,8 @@ class EachSubjectViewController: UIViewController {
     @IBOutlet var TextField: UITextField!
     var ScoreArray: [Double]! = []
     var Array: [String]!
-    var avgArray: [String]!
-    var hensachiArray: [Double]!
-    var num: Int = 0
+    var avg2: Double = 0 //各教科の平均
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,28 +86,21 @@ class EachSubjectViewController: UIViewController {
     }
     
     func average(){
-        var array: [Double]
-        saveData.register(defaults: ["\(label1.text!)avg" : []])
-        array = saveData.object(forKey: "\(label1.text!)avg") as! [Double]
-        print(array)
+        label3.text = "--"
+        saveData.register(defaults: ["\(label1.text!)avg2" : 0.0])
+        avg2 = saveData.object(forKey: "\(label1.text!)avg2") as! Double
         
-        //BarChart開く前に平均の計算ができてなくて落ちる
         for i in 1...9{
             if Array[i] == label1.text {
-                if array != [] {
-                    label3.text = String(array[i-1])
-                    print("平均は\(array[i-1])点")
-                } else {
-                    label3.text = "0.00"
-                    print("データがありません。")
-                }
+                label3.text = String(avg2)
+                print("平均は\(avg2)点")
             }
         }
     }
     
-    func hensachi() {
-    }
-    
+//    func hensachi() {
+//    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toScores" {

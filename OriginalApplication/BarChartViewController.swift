@@ -25,9 +25,12 @@ class BarChartViewController: UIViewController {
         print(Array)
         
         for i in 1..<Array.count {
-            entry = saveData.object(forKey: "\(Array[i])avg") as! [Double]
-            entry.insert(0, at: 0)
+            var avg2: Double = 0
+            avg2 = saveData.object(forKey: "\(Array[i])avg2") as! Double
+            entry.append(avg2)
+            print(entry)
         }
+        entry.insert(0, at: 0)
         self.setCharts(dataPoints: Array, values: entry)
         
         }
