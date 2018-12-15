@@ -37,24 +37,26 @@ class NameViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        //self.clear()
         saveData.register(defaults: ["name" : [""]])
-        print(Array)
         
-        if isFirstResponder == true {
+        if isFirstResponder == false {
             //本来ならfalseで動くはず
-            Array = [saveData.object(forKey: "name")] as! [String]
+            Array = saveData.object(forKey: "name") as! [String]
         
-            TextField1.text = Array[0]
-            TextField2.text = Array[1]
-            TextField3.text = Array[2]
-            TextField4.text = Array[3]
-            TextField5.text = Array[4]
-            TextField6.text = Array[5]
-            TextField7.text = Array[6]
-            TextField8.text = Array[7]
-            TextField9.text = Array[8]
+            TextField1.text = Array[1]
+            TextField2.text = Array[2]
+            TextField3.text = Array[3]
+            TextField4.text = Array[4]
+            TextField5.text = Array[5]
+            TextField6.text = Array[6]
+            TextField7.text = Array[7]
+            TextField8.text = Array[8]
+            TextField9.text = Array[9]
+        } else {
+            self.alert()
         }
+        
+        print(Array)
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -105,13 +107,19 @@ class NameViewController: UIViewController {
     
     
     
+    func alert(){
+        let alert: UIAlertController = UIAlertController(title: "保存に失敗しました", message: "科目名を入力してください", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
+        present(alert, animated: true, completion: nil)
+        print(Array)
+    }
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let _: ViewController = segue.destination as! ViewController
         if Array == [] || Array == ["", "", "", "", "", "", "", "", ""] {
-            let alert: UIAlertController = UIAlertController(title: "保存に失敗しました", message: "科目名を入力してください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
-            present(alert, animated: true, completion: nil)
-            print(Array)
+            self.alert()
         }
         saveData.set(Array, forKey: "name")
     }

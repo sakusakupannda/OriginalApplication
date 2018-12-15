@@ -14,15 +14,20 @@ class EachSubjectViewController: UIViewController {
     var value: Double!
     @IBOutlet var label1: UILabel!
     @IBOutlet var label2: UILabel!
+    @IBOutlet var label3: UILabel!
+    @IBOutlet var label4: UILabel!
     @IBOutlet var TextField: UITextField!
     var ScoreArray: [Double]! = []
     var Array: [String]!
+    var avgArray: [String]!
+    var hensachiArray: [Double]!
+    var num: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         label1.text = recieveValue
         saveData.register(defaults: ["\(label1.text!)scores": []])
-        
+        self.average()
         // Do any additional setup after loading the view.
     }
     
@@ -56,8 +61,8 @@ class EachSubjectViewController: UIViewController {
             let alert: UIAlertController = UIAlertController(title: "保存に失敗しました", message: "点数を入れてください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)
-        } else if Int(TextField.text!)! > 1000 {
-            let alert: UIAlertController = UIAlertController(title: "保存に失敗しました", message: "1000以下の数字を入力してください", preferredStyle: .alert)
+        } else if Int(TextField.text!)! > 10000 {
+            let alert: UIAlertController = UIAlertController(title: "保存に失敗しました", message: "10000以下の数字を入力してください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
             present(alert, animated: true, completion: nil)
             TextField.text = ""
@@ -79,6 +84,29 @@ class EachSubjectViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func average(){
+        var array: [Double]
+        saveData.register(defaults: ["\(label1.text!)avg" : []])
+        array = saveData.object(forKey: "\(label1.text!)avg") as! [Double]
+        print(array)
+        
+        //BarChart開く前に平均の計算ができてなくて落ちる
+        for i in 1...9{
+            if Array[i] == label1.text {
+                if array != [] {
+                    label3.text = String(array[i-1])
+                    print("平均は\(array[i-1])点")
+                } else {
+                    label3.text = "0.00"
+                    print("データがありません。")
+                }
+            }
+        }
+    }
+    
+    func hensachi() {
     }
     
     

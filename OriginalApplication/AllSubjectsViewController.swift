@@ -54,6 +54,7 @@ class AllSubjectsViewController: UIViewController {
         
         //教科ごとのfor文
         for i in 1..<Array.count {
+        //for i in 1..<Array.count-2 {
             sum2 = 0
             avg2 = 0
             
@@ -91,6 +92,7 @@ class AllSubjectsViewController: UIViewController {
         } else {
             avg1 = sum1 / Double(tempArray.count)
         }
+        print(avgArray)
         print(sum1)
         print(avg1)
         label4.text = String(avg1)

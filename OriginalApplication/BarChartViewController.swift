@@ -24,17 +24,10 @@ class BarChartViewController: UIViewController {
         Array = saveData.object(forKey: "name") as? [String]
         print(Array)
         
-//        if isFirstResponder == false {
-//            saveData.set(entry, forKey: "\(text!)scores")
-//            ScoreArray = saveData.object(forKey: "\(text!)scores") as? [Double]
-//        }
-        
         for i in 1..<Array.count {
             entry = saveData.object(forKey: "\(Array[i])avg") as! [Double]
             entry.insert(0, at: 0)
         }
-        
-        
         self.setCharts(dataPoints: Array, values: entry)
         
         }
@@ -73,6 +66,7 @@ class BarChartViewController: UIViewController {
         let chartData = BarChartData(dataSets: [chartDataSet]) //グラフの細かい範囲など
         
         barChartView.data = chartData
+        chartDataSet.colors = ChartColorTemplates.vordiplom()
     }
 
     @IBAction func reset (){
@@ -96,12 +90,12 @@ class BarChartViewController: UIViewController {
 }
 
 
+//X軸の設定
 class BarChartFormatter: NSObject, IAxisValueFormatter{
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let saveData: UserDefaults = UserDefaults.standard
         var datapoints: [String] = saveData.object(forKey: "name") as! [String]
         print(datapoints)
         return datapoints[Int(value)]
-        //X軸の設定
     }
 }
