@@ -64,9 +64,9 @@ class ScoresViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     //テーブルビュー編集時に呼ばれるメソッド
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         //削除の場合、配列からデータを削除する。
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
             ScoreArray.remove(at: indexPath.row)
             saveData.set(ScoreArray, forKey: "\(text!)scores")
             ScoreArray = saveData.object(forKey: "\(text!)scores") as? [Double]

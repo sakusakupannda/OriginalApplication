@@ -24,23 +24,30 @@ class ViewController: UIViewController {
     var Array: [String] = [] //[教科名]
     var ScoreArray: [Double] = [0,0] //[教科ごとの点数]
     var tempArray: [Double] = [] //[全部の点数]
+    var ArrayAB: [Int] = [0,0,0,0,0,0,0,0,0]
     let saveData: UserDefaults = UserDefaults.standard
-    var avg1: Double = 0 //全教科の平均
-    var sum1: Double = 0 //全教科の合計
-    var avg2: Double = 0 //各教科の平均
-    var sum2: Double = 0 //各教科の合計
-    var num: Int = 0 //全体の満点だった時のやつ
+    var avg1A: Double = 0 //全教科の平均
+    var avg1B: Double = 0 //全教科の平均
+    var sum1A: Double = 0 //全教科の合計
+    var sum1B: Double = 0 //全教科の合計
+    var avg2A: Double = 0 //各教科の平均
+    var avg2B: Double = 0 //各教科の平均
+    var sum2A: Double = 0 //各教科の合計
+    var sum2B: Double = 0 //各教科の合計
+    var numA: Int = 0 //全体の満点だった時のやつ
+    var numB: Int = 0 //全体の満点だった時のやつ
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        self.calculate()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.calculate()
+        
         let saveData: UserDefaults = UserDefaults.standard
         Array = saveData.object(forKey: "name") as! [String]
         
@@ -143,78 +150,138 @@ class ViewController: UIViewController {
     }
     
     @IBAction func back() {
-        self.dismiss(animated: true, completion: nil)
+        let next = storyboard!.instantiateViewController(withIdentifier: "Name")
+        self.present(next, animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
     }
     
     
+    
+    
+    
     func calculate() {
-        sum1 = 0
-        avg1 = 0
+        saveData.register(defaults: ["ArrayAB": [0,0,0,0,0,0,0,0,0]])
+        ArrayAB = (saveData.object(forKey: "ArrayAB") as? [Int])!
+        //sum1 = 0
+        //avg1 = 0
         Array = []
         Array = saveData.object(forKey: "name") as! [String]
         tempArray = []
         
         //教科ごとのfor文
         for i in 1..<Array.count {
-        //for i in 1..<Array.count-2 {
-            print(Array[i])
-            sum2 = 0
-            avg2 = 0
+            //print(Array[i])
+            //print(ArrayAB)
             
-            //各教科のScoreArrayに点数を入れる
-            ScoreArray = []
-            saveData.register(defaults: ["ScoreArray": []])
-            saveData.register(defaults: ["\(Array[i])scores": []])
-            ScoreArray = (saveData.object(forKey: "\(Array[i])scores") as? [Double])!
+            if ArrayAB[i-1] == 0 {
+                sum2A = 0
+                avg2A = 0
+                
+                //各教科のScoreArrayに点数を入れる
+                ScoreArray = []
+                saveData.register(defaults: ["ScoreArray": []])
+                saveData.register(defaults: ["\(Array[i])scores": []])
+                ScoreArray = (saveData.object(forKey: "\(Array[i])scores") as? [Double])!
+                
+                
+                //点数を足していく
+                for i in 0..<ScoreArray.count{
+                    sum1A = sum1A + ScoreArray[i]
+                    tempArray.append(ScoreArray[i])
+                    sum2A = sum2A + ScoreArray[i]
+                }
+                
+                //avg2の処理
+                if ScoreArray.count == 0 {
+                    avg2A = 0
+                } else {
+                    avg2A = sum2A / Double(ScoreArray.count)
+                }
+                
+                //numの処理
+                numA = 100 * tempArray.count
+                saveData.set(numA, forKey: "numA")
+                
+                
+                //print("Aの平均点(avg2A)は\(avg2A)")
+                saveData.set(avg2A, forKey: "\(Array[i])avg2A")
+                //print("Aの合計点(sum2A)は\(sum2A)")
+                saveData.set(sum2A, forKey: "\(Array[i])sum2A")
+                //print(ScoreArray)
             
-            //点数を足していく
-            for i in 0..<ScoreArray.count{
-                sum1 = sum1 + ScoreArray[i]
-                tempArray.append(ScoreArray[i])
-                sum2 = sum2 + ScoreArray[i]
+                //avg1の処理
+                if tempArray.count == 0 {
+                    avg1A = 0
+                } else {
+                avg1A = sum1A / Double(tempArray.count)
+                }
+            
+            
+                //print(tempArray)
+                //print("Aの全部の合計点(sum1A)は\(sum1A)/\(numA)")
+                saveData.set(sum1A, forKey: "sum1A")
+                //print("Aの全部の平均点(avg1A)は\(avg1A)")
+                saveData.set(avg1A, forKey: "avg1A")
+            
+            } else if ArrayAB[i-1] == 1 {
+                sum2B = 0
+                avg2B = 0
+            
+                //各教科のScoreArrayに点数を入れる
+                ScoreArray = []
+                saveData.register(defaults: ["ScoreArray": []])
+                saveData.register(defaults: ["\(Array[i])scores": []])
+                ScoreArray = (saveData.object(forKey: "\(Array[i])scores") as? [Double])!
+                
+                
+                //点数を足していく
+                for i in 0..<ScoreArray.count{
+                    sum1B = sum1B + ScoreArray[i]
+                    tempArray.append(ScoreArray[i])
+                    sum2B = sum2B + ScoreArray[i]
+                }
+                
+                //avg2の処理
+                if ScoreArray.count == 0 {
+                    avg2B = 0
+                } else {
+                    avg2B = sum2B / Double(ScoreArray.count)
+                }
+                
+                //numの処理
+                numB = 100 * tempArray.count
+                saveData.set(numB, forKey: "numB")
+                
+                
+                //print("Bの平均点(avg2B)は\(avg2B)")
+                saveData.set(avg2B, forKey: "\(Array[i])avg2B")
+                //print("Bの合計点(sum2B)は\(sum2B)")
+                saveData.set(sum2B, forKey: "\(Array[i])sum2B")
+                //print(ScoreArray)
+        
+                //avg1の処理
+                if tempArray.count == 0 {
+                    avg1B = 0
+                } else {
+                    avg1B = sum1B / Double(tempArray.count)
+                }
+                
+                
+                //print(tempArray)
+                //print("Bの全部の合計点(sum1B)は\(sum1B)/\(numB)")
+                saveData.set(sum1B, forKey: "sum1B")
+                //print("Bの全部の平均点(avg1B)は\(avg1B)")
+                saveData.set(avg1B, forKey: "avg1B")
             }
-            
-            //avg2の処理
-            if ScoreArray.count == 0 {
-                avg2 = 0
-            } else {
-                avg2 = sum2 / Double(ScoreArray.count)
-            }
-            
-            //numの処理
-            num = 100 * tempArray.count
-            saveData.set(num, forKey: "num")
-            
-            
-            print("平均点(avg2)は\(avg2)")
-            saveData.set(avg2, forKey: "\(Array[i])avg2")
-            print("合計点(sum2)は\(sum2)")
-            saveData.set(sum2, forKey: "\(Array[i])sum2")
-            print(ScoreArray)
         }
-        
-        //avg1の処理
-        if tempArray.count == 0 {
-            avg1 = 0
-        } else {
-            avg1 = sum1 / Double(tempArray.count)
-        }
-        
-        
-        print(tempArray)
-        print("全部の合計点(sum1)は\(sum1)/\(num)")
-        saveData.set(sum1, forKey: "sum1")
-        print("全部の平均点(avg1)は\(avg1)")
-        saveData.set(avg1, forKey: "avg1")
-        
     }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEach" {
             let secondViewController: EachSubjectViewController = segue.destination as! EachSubjectViewController
             secondViewController.recieveValue = self.value
-            secondViewController.Array = self.Array
         }
     }
 }

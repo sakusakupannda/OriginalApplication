@@ -13,7 +13,7 @@
         <!--NameViewController-->
         <scene sceneID="hIf-sI-wet">
             <objects>
-                <viewController title="NameViewController" id="F8i-eY-Q3b" customClass="NameViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Name" title="NameViewController" id="F8i-eY-Q3b" customClass="NameViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KhM-32-Cxq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,10 +172,10 @@
                                     <action selector="clear" destination="F8i-eY-Q3b" eventType="touchUpInside" id="O4m-wI-UkJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="教科名を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll9-hO-gz5">
-                                <rect key="frame" x="26" y="41" width="297" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter the subjects in the fields." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll9-hO-gz5">
+                                <rect key="frame" x="26" y="41" width="322" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -217,12 +217,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tL-tV-qmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1298" y="91"/>
+            <point key="canvasLocation" x="-1298.4000000000001" y="90.404797601199405"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC" id="BYZ-38-t0r" customClass="ViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -381,58 +381,107 @@
             </objects>
             <point key="canvasLocation" x="-250.40000000000001" y="89.505247376311857"/>
         </scene>
-        <!--Bar Chart View Controller-->
-        <scene sceneID="GtL-h6-hKb">
+        <!--Bar Charts View Controller-->
+        <scene sceneID="zmI-Sp-9yv">
             <objects>
-                <viewController id="b7k-X2-dSF" customClass="BarChartViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ACm-1G-gec">
+                <viewController id="T3l-Ux-971" customClass="BarChartsViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="klc-6U-ktI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nTJ-Gp-rVd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ru1-6c-kKR">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" id="ZN6-mC-85W">
+                            <rect key="frame" x="79" y="7" width="216" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="A"/>
+                                <segment title="B"/>
+                            </segments>
+                            <connections>
+                                <action selector="tapSegmentedControl:" destination="T3l-Ux-971" eventType="valueChanged" id="37o-Cl-D5J"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2X-G3-c5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3253.5999999999999" y="-612.14392803598207"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a0I-uH-5kb">
+            <objects>
+                <navigationController id="Ude-MO-dL3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bUX-xb-FNF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dFK-MR-2d2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="T3l-Ux-971" kind="relationship" relationship="rootViewController" id="Lxy-3x-aGM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OO0-ui-CHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="-612"/>
+        </scene>
+        <!--Bar Chart View ControllerA-->
+        <scene sceneID="aoB-FH-V2R">
+            <objects>
+                <viewController storyboardIdentifier="A" id="Fsm-tE-ouF" customClass="BarChartViewControllerA" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcI-Ri-hNR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="背景3.gif" translatesAutoresizingMaskIntoConstraints="NO" id="lR2-0b-PE3">
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="背景3.gif" translatesAutoresizingMaskIntoConstraints="NO" id="wyt-IO-qNO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jq-cf-2q0">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPI-PO-RlX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="reset" destination="b7k-X2-dSF" eventType="touchUpInside" id="2UW-El-o1S"/>
+                                    <action selector="reset" destination="Fsm-tE-ouF" eventType="touchUpInside" id="nEX-EN-dYu"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="keE-pb-AA9" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="29" y="40" width="316" height="541"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lA7-kN-pxF" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="29" y="82" width="317" height="503"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaQ-YT-Knw">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-dE-lfV">
                                 <rect key="frame" x="16" y="609" width="72" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="17"/>
                                 <state key="normal" title="&lt;-back"/>
                                 <connections>
-                                    <action selector="back" destination="b7k-X2-dSF" eventType="touchUpInside" id="r4Z-z1-ePE"/>
+                                    <action selector="back" destination="Fsm-tE-ouF" eventType="touchUpInside" id="ZDz-qL-itJ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="y3N-xr-Y2n"/>
+                        <viewLayoutGuide key="safeArea" id="9vF-Ys-sGr"/>
                     </view>
                     <connections>
-                        <outlet property="barChartView" destination="keE-pb-AA9" id="ubm-LP-kpd"/>
+                        <outlet property="barChartView" destination="lA7-kN-pxF" id="TbM-33-nvk"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5B1-ia-e3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C9M-YA-VXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2496.8000000000002" y="-725.48725637181417"/>
+            <point key="canvasLocation" x="4023" y="-612"/>
         </scene>
         <!--All Subjects View Controller-->
         <scene sceneID="1Us-xf-oG6">
             <objects>
-                <viewController id="mdy-PG-djJ" customClass="AllSubjectsViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="All" id="mdy-PG-djJ" customClass="AllSubjectsViewController" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePK-aY-hy6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -520,15 +569,6 @@
                                     <action selector="save" destination="mdy-PG-djJ" eventType="touchUpInside" id="1IL-1o-Th6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-xm-tMW">
-                                <rect key="frame" x="259" y="609" width="99" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="17"/>
-                                <state key="normal" title="to graph-&gt;"/>
-                                <connections>
-                                    <segue destination="b7k-X2-dSF" kind="presentation" identifier="toBarChart" id="JrW-fR-sKq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1S-NQ-uS4">
                                 <rect key="frame" x="16" y="609" width="72" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -538,10 +578,31 @@
                                     <action selector="back" destination="mdy-PG-djJ" eventType="touchUpInside" id="YBb-o5-003"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sg2-aP-9w2">
+                                <rect key="frame" x="258" y="30" width="100" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="A"/>
+                                    <segment title="B"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectorSegmentWithSender:" destination="mdy-PG-djJ" eventType="valueChanged" id="zhC-1o-SfP"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-xm-tMW">
+                                <rect key="frame" x="259" y="609" width="99" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="17"/>
+                                <state key="normal" title="to graph-&gt;"/>
+                                <connections>
+                                    <segue destination="Ude-MO-dL3" kind="presentation" id="p35-Lu-zvd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zb6-z6-2Ib"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nLZ-YH-6l4"/>
                     <connections>
                         <outlet property="label1" destination="5Rt-s8-x37" id="ePH-VW-Izf"/>
                         <outlet property="label2" destination="TTh-BT-BEv" id="Aq9-34-zXk"/>
@@ -571,7 +632,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xRb-MI-PR5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="646"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Ycd-yB-uO6">
@@ -600,8 +661,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rEm-LM-a7D" id="ts1-IY-tLF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.6009096746575342" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -609,15 +671,17 @@
                                     <outlet property="delegate" destination="5ld-T6-VFJ" id="31G-yo-D5k"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiK-Qd-W1i">
-                                <rect key="frame" x="16" y="609" width="72" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="17"/>
-                                <state key="normal" title="&lt;-back"/>
-                                <connections>
-                                    <action selector="back" destination="5ld-T6-VFJ" eventType="touchUpInside" id="A3C-NO-Rhs"/>
-                                </connections>
-                            </button>
+                            <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="bottom" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm6-5h-uRT">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <barButtonItem title="&lt;- back" id="Ngq-J2-Py9">
+                                        <connections>
+                                            <action selector="back" destination="5ld-T6-VFJ" id="5Qw-Hb-2uX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qqE-0Y-8Es"/>
@@ -632,7 +696,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ti-id-c69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2497" y="92"/>
+            <point key="canvasLocation" x="2496.8000000000002" y="91.304347826086968"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="cM6-ni-KcQ">
@@ -802,11 +866,23 @@
                                     <action selector="back" destination="xoS-b5-wzC" eventType="touchUpInside" id="ucJ-vO-UCs"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="ovK-Xl-AGI">
+                                <rect key="frame" x="258" y="30" width="100" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="A"/>
+                                    <segment title="B"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectorSegmentWithSender:" destination="xoS-b5-wzC" eventType="valueChanged" id="P8f-Dx-RYp"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ckj-h4-u3T"/>
                     </view>
                     <connections>
+                        <outlet property="SegmentedControl" destination="ovK-Xl-AGI" id="8jb-he-FI0"/>
                         <outlet property="TextField" destination="rkK-QK-v0i" id="VsR-ts-gcj"/>
                         <outlet property="label1" destination="hRc-5f-qrb" id="09O-3F-6mR"/>
                         <outlet property="label2" destination="De1-en-3qY" id="YI5-lj-jJW"/>
@@ -865,6 +941,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TO-Xd-eIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2497" y="938"/>
+        </scene>
+        <!--Bar Chart View ControllerB-->
+        <scene sceneID="lew-Z0-jot">
+            <objects>
+                <viewController storyboardIdentifier="B" id="ZDt-2e-yId" customClass="BarChartViewControllerB" customModule="OriginalApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="afY-lt-bSd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="背景3.gif" translatesAutoresizingMaskIntoConstraints="NO" id="YPx-Y2-ydG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxg-ZN-jAl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset" destination="ZDt-2e-yId" eventType="touchUpInside" id="tby-Jq-uzX"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6q-1I-XSg" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="29" y="82" width="317" height="503"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaT-17-gAV">
+                                <rect key="frame" x="16" y="609" width="72" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="17"/>
+                                <state key="normal" title="&lt;-back"/>
+                                <connections>
+                                    <action selector="back" destination="ZDt-2e-yId" eventType="touchUpInside" id="fIc-Qc-jfp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="S59-OD-5Jm"/>
+                    </view>
+                    <connections>
+                        <outlet property="barChartView" destination="d6q-1I-XSg" id="uv6-8J-LHx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H0H-WT-35M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4745" y="-612"/>
         </scene>
     </scenes>
     <resources>

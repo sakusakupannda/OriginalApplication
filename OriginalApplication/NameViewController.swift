@@ -31,12 +31,21 @@ class NameViewController: UIViewController {
     @IBOutlet var label8: UILabel!
     @IBOutlet var label9: UILabel!
     
+//    var optionalNumber1: Int?
+//    var optionalNumber2: Int!
+    
     var Array: [String] = []
     
     let saveData: UserDefaults = UserDefaults.standard
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
+        
+//        optionalNumber1 = 1
+//        optionalNumber2 = 2
+//        print(optionalNumber1)
+//        print(optionalNumber2)
+        
         saveData.register(defaults: ["name" : [""]])
         
         if isFirstResponder == false {
@@ -52,11 +61,12 @@ class NameViewController: UIViewController {
             TextField7.text = Array[7]
             TextField8.text = Array[8]
             TextField9.text = Array[9]
+            
         } else {
             self.alert()
         }
         
-        print(Array)
+        //print(Array)
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -64,9 +74,9 @@ class NameViewController: UIViewController {
     }
     
     @IBAction func button() {
-        print(TextField1.text!)
+        //print(TextField1.text!)
         Array = ["ALL", TextField1.text!, TextField2.text!, TextField3.text!, TextField4.text!, TextField5.text!, TextField6.text!, TextField7.text!, TextField8.text!, TextField9.text!]
-        print(Array[1])
+        //print(Array[1])
         saveData.set(Array, forKey: "name")
         let alert: UIAlertController = UIAlertController(title: "保存", message: "保存しました", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
@@ -111,17 +121,19 @@ class NameViewController: UIViewController {
         let alert: UIAlertController = UIAlertController(title: "保存に失敗しました", message: "科目名を入力してください", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in print("OKボタンが押されました")}))
         present(alert, animated: true, completion: nil)
-        print(Array)
+        //print(Array)
     }
     
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let _: ViewController = segue.destination as! ViewController
         if Array == [] || Array == ["", "", "", "", "", "", "", "", ""] {
             self.alert()
+        } else {
+            Array = ["ALL", TextField1.text!, TextField2.text!, TextField3.text!, TextField4.text!, TextField5.text!, TextField6.text!, TextField7.text!, TextField8.text!, TextField9.text!]
         }
         saveData.set(Array, forKey: "name")
+        let _: ViewController = segue.destination as! ViewController
     }
     
 }

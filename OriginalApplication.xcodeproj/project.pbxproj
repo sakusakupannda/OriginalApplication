@@ -10,10 +10,9 @@
 		0E9680025E118648A553BE8E /* Pods_OriginalApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D273083171388702153FB73A /* Pods_OriginalApplicationUITests.framework */; };
 		A40BC4BC21930E0400F34639 /* 背景5.gif in Resources */ = {isa = PBXBuildFile; fileRef = A40BC4BA21930E0400F34639 /* 背景5.gif */; };
 		A40BC4BD21930E0400F34639 /* 背景6.gif in Resources */ = {isa = PBXBuildFile; fileRef = A40BC4BB21930E0400F34639 /* 背景6.gif */; };
-		A43F3B51218DB155002CA991 /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F3B50218DB155002CA991 /* BarChartViewController.swift */; };
+		A43F3B51218DB155002CA991 /* BarChartViewControllerA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F3B50218DB155002CA991 /* BarChartViewControllerA.swift */; };
 		A44551802009D565007115CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445517F2009D565007115CC /* AppDelegate.swift */; };
 		A44551822009D565007115CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551812009D565007115CC /* ViewController.swift */; };
-		A44551852009D565007115CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A44551832009D565007115CC /* Main.storyboard */; };
 		A44551872009D565007115CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A44551862009D565007115CC /* Assets.xcassets */; };
 		A445518A2009D565007115CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A44551882009D565007115CC /* LaunchScreen.storyboard */; };
 		A44551952009D565007115CC /* OriginalApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551942009D565007115CC /* OriginalApplicationTests.swift */; };
@@ -22,6 +21,9 @@
 		A44551B02009E3E4007115CC /* AllSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551AF2009E3E4007115CC /* AllSubjectsViewController.swift */; };
 		A44551B22009E3F8007115CC /* EachSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551B12009E3F8007115CC /* EachSubjectViewController.swift */; };
 		A44551B42009E40A007115CC /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44551B32009E40A007115CC /* ScoresViewController.swift */; };
+		A448CE2721FB53F400F2436D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A448CE2621FB53F400F2436D /* Main.storyboard */; };
+		A448CE2921FB54A500F2436D /* BarChartViewControllerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448CE2821FB54A400F2436D /* BarChartViewControllerB.swift */; };
+		A448CE2B21FB564200F2436D /* BarChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448CE2A21FB564200F2436D /* BarChartsViewController.swift */; };
 		A48A4A5F21038558000CA2EA /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A4A5E21038558000CA2EA /* NameViewController.swift */; };
 		A48A4A6321038702000CA2EA /* 背景2.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A6221038702000CA2EA /* 背景2.gif */; };
 		A48A4A6521038724000CA2EA /* 背景3.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A6421038724000CA2EA /* 背景3.gif */; };
@@ -29,7 +31,7 @@
 		A48A4A69210387BA000CA2EA /* 背景4.gif in Resources */ = {isa = PBXBuildFile; fileRef = A48A4A68210387BA000CA2EA /* 背景4.gif */; };
 		A490E88120232F53000B0983 /* ノート.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A490E88020232F53000B0983 /* ノート.jpg */; };
 		A4D8D655219FDEBD000FDCC2 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D8D654219FDEBD000FDCC2 /* LineChartViewController.swift */; };
-		B44927614DA47EE472C05DEF /* Pods_OriginalApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464D16E4371B30D8ED26EEA1 /* Pods_OriginalApplication.framework */; };
+		B44927614DA47EE472C05DEF /* Pods_OriginalApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464D16E4371B30D8ED26EEA1 /* Pods_OriginalApplication.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F6F3E6642AD801CDF0BA1CCE /* Pods_OriginalApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF20F96052AB6A3353B95F1 /* Pods_OriginalApplicationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,11 +59,10 @@
 		6F0A788B9EC228A5880EB500 /* Pods-OriginalApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginalApplicationUITests/Pods-OriginalApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A40BC4BA21930E0400F34639 /* 背景5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景5.gif"; path = "../../背景/背景5.gif"; sourceTree = "<group>"; };
 		A40BC4BB21930E0400F34639 /* 背景6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景6.gif"; path = "../../背景/背景6.gif"; sourceTree = "<group>"; };
-		A43F3B50218DB155002CA991 /* BarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
+		A43F3B50218DB155002CA991 /* BarChartViewControllerA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewControllerA.swift; sourceTree = "<group>"; };
 		A445517C2009D565007115CC /* OriginalApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriginalApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A445517F2009D565007115CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A44551812009D565007115CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A44551842009D565007115CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A44551862009D565007115CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A44551892009D565007115CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A445518B2009D565007115CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +76,9 @@
 		A44551AF2009E3E4007115CC /* AllSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSubjectsViewController.swift; sourceTree = "<group>"; };
 		A44551B12009E3F8007115CC /* EachSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachSubjectViewController.swift; sourceTree = "<group>"; };
 		A44551B32009E40A007115CC /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
+		A448CE2621FB53F400F2436D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A448CE2821FB54A400F2436D /* BarChartViewControllerB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartViewControllerB.swift; sourceTree = "<group>"; };
+		A448CE2A21FB564200F2436D /* BarChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartsViewController.swift; sourceTree = "<group>"; };
 		A48A4A5E21038558000CA2EA /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		A48A4A6221038702000CA2EA /* 背景2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景2.gif"; path = "../../背景/背景2.gif"; sourceTree = "<group>"; };
 		A48A4A6421038724000CA2EA /* 背景3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "背景3.gif"; path = "../../背景/背景3.gif"; sourceTree = "<group>"; };
@@ -166,13 +170,15 @@
 				A48A4A5E21038558000CA2EA /* NameViewController.swift */,
 				A44551812009D565007115CC /* ViewController.swift */,
 				A44551AF2009E3E4007115CC /* AllSubjectsViewController.swift */,
-				A43F3B50218DB155002CA991 /* BarChartViewController.swift */,
+				A43F3B50218DB155002CA991 /* BarChartViewControllerA.swift */,
+				A448CE2821FB54A400F2436D /* BarChartViewControllerB.swift */,
+				A448CE2A21FB564200F2436D /* BarChartsViewController.swift */,
 				A44551B12009E3F8007115CC /* EachSubjectViewController.swift */,
 				A44551B32009E40A007115CC /* ScoresViewController.swift */,
 				A44551AD2009E3CE007115CC /* NotesViewController.swift */,
 				A4D8D654219FDEBD000FDCC2 /* LineChartViewController.swift */,
 				A445517F2009D565007115CC /* AppDelegate.swift */,
-				A44551832009D565007115CC /* Main.storyboard */,
+				A448CE2621FB53F400F2436D /* Main.storyboard */,
 				A44551862009D565007115CC /* Assets.xcassets */,
 				A44551882009D565007115CC /* LaunchScreen.storyboard */,
 				A445518B2009D565007115CC /* Info.plist */,
@@ -280,15 +286,18 @@
 				TargetAttributes = {
 					A445517B2009D565007115CC = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					A445518F2009D565007115CC = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A445517B2009D565007115CC;
 					};
 					A445519A2009D565007115CC = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A445517B2009D565007115CC;
 					};
@@ -320,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A40BC4BC21930E0400F34639 /* 背景5.gif in Resources */,
+				A448CE2721FB53F400F2436D /* Main.storyboard in Resources */,
 				A48A4A6721038760000CA2EA /* 背景1.gif in Resources */,
 				A445518A2009D565007115CC /* LaunchScreen.storyboard in Resources */,
 				A44551872009D565007115CC /* Assets.xcassets in Resources */,
@@ -328,7 +338,6 @@
 				A48A4A69210387BA000CA2EA /* 背景4.gif in Resources */,
 				A48A4A6521038724000CA2EA /* 背景3.gif in Resources */,
 				A490E88120232F53000B0983 /* ノート.jpg in Resources */,
-				A44551852009D565007115CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,11 +456,13 @@
 				A4D8D655219FDEBD000FDCC2 /* LineChartViewController.swift in Sources */,
 				A44551822009D565007115CC /* ViewController.swift in Sources */,
 				A44551B42009E40A007115CC /* ScoresViewController.swift in Sources */,
+				A448CE2921FB54A500F2436D /* BarChartViewControllerB.swift in Sources */,
 				A48A4A5F21038558000CA2EA /* NameViewController.swift in Sources */,
 				A44551B22009E3F8007115CC /* EachSubjectViewController.swift in Sources */,
 				A44551B02009E3E4007115CC /* AllSubjectsViewController.swift in Sources */,
-				A43F3B51218DB155002CA991 /* BarChartViewController.swift in Sources */,
+				A43F3B51218DB155002CA991 /* BarChartViewControllerA.swift in Sources */,
 				A44551802009D565007115CC /* AppDelegate.swift in Sources */,
+				A448CE2B21FB564200F2436D /* BarChartsViewController.swift in Sources */,
 				A44551AE2009E3CE007115CC /* NotesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,14 +499,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A44551832009D565007115CC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A44551842009D565007115CC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A44551882009D565007115CC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -623,9 +626,9 @@
 				DEVELOPMENT_TEAM = 65SWWN45J8;
 				INFOPLIST_FILE = OriginalApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = .sakurako.OriginalApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = .OriginalApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -639,9 +642,9 @@
 				DEVELOPMENT_TEAM = 65SWWN45J8;
 				INFOPLIST_FILE = OriginalApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = .sakurako.OriginalApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = .OriginalApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -658,7 +661,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sakurako.OriginalApplicationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OriginalApplication.app/OriginalApplication";
 			};
@@ -676,7 +679,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sakurako.OriginalApplicationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OriginalApplication.app/OriginalApplication";
 			};
@@ -696,7 +699,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = OriginalApplication;
 			};
@@ -716,7 +719,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = OriginalApplication;
 			};
